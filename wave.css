@@ -376,6 +376,27 @@ p{
   background-color: #65dfc9
 }
 
+.project-links a {
+  display: block;
+  text-decoration: none;
+  color: #333; /* Set the desired text color */
+  padding: 10px; /* Adjust the padding as needed */
+  margin-bottom: 10px; /* Adjust the bottom margin as needed */
+  border-radius: 5px; /* Add rounded corners to the links */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Hover effect for the links */
+.project-links a:hover {
+  background-color: #f0f0f0; /* Set the desired background color on hover */
+  color: #555; /* Set the desired text color on hover */
+}
+
+/* Style for the icon inside the links */
+.project-links a i {
+  margin-right: 10px; /* Adjust the right margin as needed */
+}
+
 .mySlides {display: none}
 img {vertical-align: middle;}
 
