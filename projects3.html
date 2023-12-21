@@ -37,34 +37,68 @@
                 <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
             </div>
             <div class="dashboard">
+
                 <div class="accomplishments">
-                    <h8>Launch Consulting Group Dasboard</h8>
+                    <h8>Spotistatify: Spotify Web API Quiz App</h8>
+                    <h2>Click to play:</h2>
+                    <div class="gameButton">
+                        <a href="https://rowan7401.github.io/Spotify-Web-Api-Quiz-App/">
+                            <button class="btn"><i class="fa fa-gamepad" aria-hidden="true"></i></button></a>
+                    </div>
                 </div>
+
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="./Project img/Dash.png" style="width: 100%">
-                        <div class="numbertext">1 / 1</div>
-                        <div class="text">Landing Page of Dash</div>
+                        <img src="./Project img/artist_image.JPG" style="width:100%">
+                        <div class="numbertext">1 / 4</div>
+                        <div class="text">Game mode landing page</div>
                     </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/HS_correct_popup.JPG" style="width:100%">
+                        <div class="numbertext">2 / 4</div>
+                        <div class="text">Popup of Hot Streak gamemode</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/mc_page.JPG" style="width:100%">
+                        <div class="numbertext">3 / 4</div>
+                        <div class="text">Multiple choice question</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/homepage.JPG" style="width:100%">
+                        <div class="numbertext">4 / 4</div>
+                        <div class="text">Home landing page of app</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
 
                 </div>
                 <br>
 
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+
+
                 <div class="gameBox">
-                    <h4>A project I completed during my internship. Hosted on the site are live updated data
-                        like YTD Revenue, Employee seniority status, and GM%. Chart JS methods I created produce the
-                        visuals on the bottom. searching for
-                        I gained a lot of front end experience through this project.
+                    <h4>A project I completed over Summer 2022. I intended to create a fun and easy to use
+                        app that allows users to quiz themselves on their favorite artists' statistics that
+                        are within Spotify's free API endpoints. Coded in majority JavaScript, CSS, and HTML.
                     </h4>
                 </div>
                 <div class="socials">
-                    <a href="projects3.html"><i class="fa fa-file-code-o" aria-hidden="false"></i>
-                        Spotify Project</a>
+                    <a href="projects.html"><i class="fa fa-file-code-o" aria-hidden="false"></i>
+                        Internship Dashboard Project</a>
                     <a href="projects2.html"><i class="fa fa-file-code-o" aria-hidden="false"></i>
                         NovaHouse Project</a>
                 </div>
             </div>
-
 
             <script>
                 let slideIndex = 1;
