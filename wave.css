@@ -112,6 +112,7 @@ h8 {
 .photostack {
   display: flex;
   flex-direction: column;
+  max-width: 125%;
 }
 
 .accomplishments {
@@ -129,6 +130,7 @@ h8 {
 .box2:hover,
 .box3 {
   background: white;
+  max-width: 70%;
   display: flex;
   flex-direction: column;
   border: none;
@@ -139,10 +141,12 @@ h8 {
 }
 
 .box {
+  max-width: 70%;
   width: 30rem;
 }
 
 .box4 {
+  max-width: 70%;
   width: 20rem;
   margin-right: 1rem;
   margin-bottom: 0.5rem;
@@ -157,6 +161,7 @@ h8 {
 }
 
 .box3 {
+  max-width: 85%;
   width: 55rem;
 }
 
@@ -183,6 +188,7 @@ h8 {
 
 .socials {
   display: flex;
+  max-width: 75%;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -580,7 +586,26 @@ li a:hover {
   .gameBox,
   .box2:hover,
   .box3 {
+    max-width: 90%;
     width: 90%;
+  }
+
+  .logos,
+  .logos2 {
+    max-width: 75%;
+    width: 25rem;
+    height: auto;
+    border: #ffffff 1.5rem;
+  }
+
+  .socials {
+    display: flex;
+    max-width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.8rem;
+    animation: 0s ease-out 1s 1 falls;
   }
 
   .glass {
@@ -627,6 +652,25 @@ li a:hover {
     width: 80rem;
   }
 
+  .logos,
+  .logos2 {
+    max-width: 75%;
+    width: 35rem;
+    height: auto;
+    border: #ffffff 1.5rem;
+  }
+
+  .socials {
+    display: flex;
+    max-width: 85%;
+    width: 40rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.6rem;
+    animation: 0s ease-out 1s 1 falls;
+  }
+
   .glass {
     max-width: 75%;
     width: 50%;
@@ -668,12 +712,49 @@ li a:hover {
   .gameBox,
   .box2:hover,
   .box3 {
-    width: 100%;
+    max-width: 87%;
+    width: 87%;
+  }
+
+  .photostack {
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .logos,
+  .logos2 {
+    max-width: 75%;
+    width: 15rem;
+    height: auto;
+    border: #ffffff 1.5rem;
+  }
+
+  .h3 {
+    font-size: 0.4rem;
+    font-weight: bolder;
+  }
+
+  .h4,
+  .h5 {
+  font-size: 0.5rem;
+  line-height: 100%;
+  font-weight: bold;
   }
 
   .glass {
     max-width: 90%;
     width: 100%;
+  }
+
+  .socials {
+    display: flex;
+    max-width: 85%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4rem;
+    animation: 0s ease-out 1s 1 falls;
   }
 
   .btn {
