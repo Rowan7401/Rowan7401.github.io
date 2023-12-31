@@ -92,11 +92,11 @@ h7 {
 }
 
 h8 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: bolder;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   margin-left: 0.5rem;
-  padding-right: 1rem;
+  padding-right: 0.8rem;
 }
 
 /* Layout Styles */
@@ -349,9 +349,9 @@ img {
   background-color: black;
   border-radius: 10%;
   border: solid grey;
-  border-width: 0.2rem;
-  font-size: 1rem;
-  padding: 0.6rem 0.9rem;
+  border-width: 0.08rem;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
   position: absolute;
   bottom: 5%;
   left: 1.5%;
@@ -712,8 +712,44 @@ li a:hover {
   .gameBox,
   .box2:hover,
   .box3 {
-    max-width: 87%;
-    width: 87%;
+    max-width: 57%;
+    width: 55%;
+  }
+
+  .h8 {
+    font-size: 0.5rem;
+  }
+
+  .prev,
+  .next {
+    width: 0.7rem;
+    padding: 0.2rem;
+    margin-top: -0.5rem;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: 0.6s ease;
+    border-radius: 0 0.4rem 0.5rem 0;
+    user-select: none;
+  }
+
+  .text {
+    border-width: 0.2rem;
+    font-size: 0.5rem;
+    padding: 0.2rem 0.3rem;
+    position: absolute;
+    bottom: 3.5%;
+    left: 1%;
+    text-align: center;
+  }
+  
+  .accomplishments {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-right: 2rem;
   }
 
   .photostack {
