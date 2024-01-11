@@ -813,8 +813,10 @@ li a:hover {
   }
 
   .socials2 {
-    max-width: 65%;
+    max-width: 75%;
     margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .btn {
