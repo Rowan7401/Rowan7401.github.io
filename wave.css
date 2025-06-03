@@ -26,7 +26,7 @@ main {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 50%;
+  border-radius: 4rem;
 }
 
 .avatar {
@@ -73,8 +73,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.75rem;
-  font-weight: bolder;
+  font-size: 2.5rem;
 }
 
 h4,
@@ -111,8 +110,13 @@ h8 {
 
 .photostack {
   display: flex;
+  margin-left: 5rem;
+  margin-right: 5rem;
   flex-direction: column;
-  max-width: 125%;
+  justify-self: center;
+  max-width: 90%;
+  height: 75rem;
+  max-height: 100%;
 }
 
 .accomplishments {
@@ -124,13 +128,12 @@ h8 {
   margin-right: 2rem;
 }
 
-.box,
+
 .box4,
 .gameBox,
-.box2:hover,
-.box3 {
+.box2:hover {
   background: white;
-  max-width: 70%;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   border: none;
@@ -138,6 +141,24 @@ h8 {
   text-align: center;
   margin: 0.5rem;
   padding: 0.2rem;
+}
+
+.box {
+  background: white;
+  max-width: 50%;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.box3 {
+  background: white;
+  max-width: 70%;
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .box {
@@ -161,8 +182,8 @@ h8 {
 }
 
 .box3 {
-  max-width: 85%;
-  width: 55rem;
+  max-width: 95%;
+  width: 105rem;
 }
 
 .glass {
@@ -194,7 +215,20 @@ h8 {
   align-items: center;
   justify-content: center;
   margin-top: 0.6rem;
+  gap: 1rem;
   animation: 0s ease-out 1s 1 falls;
+}
+
+.polaroids {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.6rem;
+  animation: 0s ease-out 1s 1 falls;
+  max-width: 100%;
+  width: 100rem;
+  font-family: 'Homemade Apple', cursive;
 }
 
 
@@ -206,16 +240,6 @@ h8 {
   100% {
     transform: scale(1) translateY(0);
   }
-}
-
-.polaroid1 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Homemade Apple', cursive;
-  font-size: 1.25rem;
-  color: #000;
 }
 
 li {
@@ -263,18 +287,19 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-left: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .btn {
   background-color: white;
-  margin-right: 1rem;
-  border-radius: 1.25rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
   border: none;
   color: #4188eb;
   padding: 0.2rem 0.4rem;
   margin-bottom: 0.5rem;
-  font-size: 3rem;
+  font-size: 2.3rem;
   cursor: pointer;
 }
 
@@ -282,13 +307,23 @@ p {
   background-color: #65dfc9;
 }
 
+.projectsBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .project-links a {
-  display: block;
   text-decoration: none;
+  background-color: #8ec5f290;
   color: #333;
-  padding: 0.2rem;
-  margin-bottom: 0.1rem;
-  border-radius: 0.25rem;
+  padding: 0.5rem;
+  margin-right: 3rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  border-radius: 1.25rem;
   transition: background-color 0.3s ease;
 }
 
@@ -307,6 +342,9 @@ p {
 
 img {
   vertical-align: middle;
+  max-width: 75%;
+  width: 17rem;
+  height: auto;
 }
 
 .slideshow-container,
@@ -583,13 +621,33 @@ li a:hover {
 
 /* Tablet styles */
 @media only screen and (max-width: 768px) {
-  .box,
+  .box {
+    max-width: 95%;
+    width: 30rem;
+    justify-self: center;
+  }
+
+  .project-links a {
+    margin-right: 0.1rem;
+  }
+
   .box4,
-  .gameBox,
-  .box2:hover,
+  .gameBox {
+    max-width: 95%;
+    width: 95%;
+  }
+
   .box3 {
-    max-width: 90%;
-    width: 90%;
+    max-width: 95%;
+    width: 6rem;
+    justify-content: center;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    font-weight: bolder;
+    text-align: center;
+    justify-self: center;
   }
 
   .logos,
@@ -612,6 +670,7 @@ li a:hover {
 
   .glass {
     width: 90%;
+    justify-self: center;
   }
 
   .btn {
@@ -644,8 +703,10 @@ li a:hover {
     width: 10rem;
   }
 }
+
 /* TV styles */
 @media only screen and (min-width: 2000px) {
+
   .box,
   .box4,
   .gameBox,
@@ -675,6 +736,7 @@ li a:hover {
 
   .glass {
     max-width: 75%;
+    justify-self: center;
     width: 50%;
   }
 
@@ -684,7 +746,8 @@ li a:hover {
 
   .project-links a {
     padding: 0.3rem;
-  } 
+  }
+
   table,
   th,
   td {
@@ -695,6 +758,7 @@ li a:hover {
   li a {
     padding: 0.6rem 1.8rem;
   }
+
   ul {
     width: 30rem;
   }
@@ -710,14 +774,31 @@ li a:hover {
 /* Mobile styles */
 @media only screen and (max-width: 480px) {
   .box {
-    max-width: 88%;
-    width: 88%;
-    align-items: center;
-    align-self: center;
+    max-width: 95%;
+    width: 95%;
+    justify-self: center;
   }
+
+  .polaroids {
+    max-width: 150%;
+    width: 95%;
+    justify-self: center;
+    justify-content: center;
+    margin: 0.5rem;
+  }
+
+  img {
+    width: 250rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+
   .box4 {
-    max-width: 75%;
-    width: 75%;
+    max-width: 98%;
+    width: 18rem;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
   }
 
   .gameBox {
@@ -728,14 +809,12 @@ li a:hover {
 
   }
 
-  
   .box2:hover,
   .box3 {
-    align-items: center;
-    align-self: center;
-    max-width: 70%;
-    width: 70%;
+    max-width: 95%;
+    width: 50rem;
   }
+
   .h2 {
     font-size: 0.7rem;
   }
@@ -766,7 +845,7 @@ li a:hover {
     left: 1%;
     text-align: center;
   }
-  
+
   .accomplishments {
     display: flex;
     flex: 1;
@@ -779,7 +858,10 @@ li a:hover {
   .photostack {
     display: flex;
     flex-direction: column;
-    max-width: 95%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-height: 90%;
+    max-width: 100%;
   }
 
   .logos,
@@ -791,29 +873,34 @@ li a:hover {
   }
 
   .h3 {
-    font-size: 0.4rem;
+    font-size: 0.35rem;
+    margin-left: 3rem;
     font-weight: bolder;
+    text-align: center;
   }
 
   .h4,
   .h5 {
-  font-size: 0.5rem;
-  line-height: 100%;
-  font-weight: bold;
+    font-size: 0.5rem;
+    line-height: 100%;
+    font-weight: bold;
   }
 
   .glass {
-    max-width: 90%;
+    max-width: 100%;
     width: 100%;
+    justify-self: center;
   }
 
   .socials {
     max-width: 85%;
     margin-top: 0.4rem;
+    gap: 1rem;
   }
 
   .socials2 {
     max-width: 75%;
+    gap: 1rem;
     margin-top: 0.4rem;
     display: flex;
     flex-direction: column;
@@ -826,24 +913,49 @@ li a:hover {
   .project-links a {
     padding: 0.1rem;
   }
+
   ul {
     width: 100%;
   }
-  
+
   li a {
     padding: 0.6rem 0.8rem;
   }
-  
-  .circle1, .circle2 {
+
+  .circle1,
+  .circle2 {
     max-width: 50%;
-    height: 6rem;
-    width: 6rem;
+    height: 9rem;
+    width: 9rem;
   }
+
+  .circle1 {
+    animation: 1s ease-out 0s 1 slideInFromRight;
+    top: 3%;
+    right: 1%;
+  }
+
+  @keyframes slideInFromRight {
+    0% {
+      transform: scale(0) translateX(100%);
+    }
+
+    100% {
+      transform: scale(1) translateX(0);
+    }
+  }
+
+  .circle2 {
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    bottom: -3%;
+    left: -2%;
+  }
+
   table,
   th,
   td {
-    margin: 1%;
-    margin-bottom: 2%;
+    margin: -1%;
+    margin-bottom: -2%;
     font-size: 0.6rem;
   }
 
