@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./wave.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -38,67 +39,130 @@
                 <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
             </div>
             <div class="dashboard">
-                <div class="accomplishments">
-                    <h8>Launch Consulting Group Dashboard</h8>
+
+                <div class="projectsBtn">
+                    <h8>Dream Team: Next.js Opinion Forum App</h8>
+                    <h2 style="color: rgba(71, 3, 180, 0.79);">Click to play:</h2>
+                    <div class="gameButton">
+                        <a href="https://gleaming-nasturtium-90f44b.netlify.app/">
+                            <button class="btn"><i class="fa fa-gamepad" aria-hidden="true"></i></button></a>
+                    </div>
+                    <h8 style="color: rgba(71, 3, 180, 0.79);">Repository:</h8>
+                    <div class="gameButton">
+                        <a href="https://github.com/Rowan7401/dream-team">
+                            <button class="btn"><i class="fa-solid fa-file-code" aria-hidden="true"></i></button></a>
+                    </div>
                 </div>
+
+
+
                 <div class="slideshow-container">
                     <div class="mySlides fade">
-                        <img src="./Project img/Dash.png" style="width: 100%">
-                        <div class="numbertext">1 / 1</div>
-                        <div class="text">Landing Page of Dash</div>
+                        <img src="./Project img/dreamLogin.jpg" style="width:100%">
+                        <div class="numbertext">1 / 6</div>
+                        <div class="text">Login page</div>
                     </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/createDream.jpg" style="width:100%">
+                        <div class="numbertext">2 / 6</div>
+                        <div class="text">Create New Dream</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/dreamLandingPage.jpg" style="width:100%">
+                        <div class="numbertext">3 / 6</div>
+                        <div class="text">Landing Page</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/searchDreams.jpg" style="width:100%">
+                        <div class="numbertext">4 / 6</div>
+                        <div class="text">Seach for Dreams</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/searchDreamUsers.jpg" style="width:100%">
+                        <div class="numbertext">5 / 6</div>
+                        <div class="text">Search for Users</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="./Project img/myDreams.jpg" style="width:100%">
+                        <div class="numbertext">6 / 6</div>
+                        <div class="text">Your Dream Teams</div>
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
 
                 </div>
                 <br>
 
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+
+
                 <div class="gameBox">
-                    <h4>A project I completed during my internship. Hosted on the site are live updated data
-                        like YTD Revenue, Employee seniority status, and GM%. Chart JS methods I created produce the
-                        visuals on the bottom. searching for
-                        I gained a lot of front end experience through this project.
+                    <h4>A project I completed over Spring 2025. I wanted to create a fun app where users could post hot
+                        takes and
+                        look at others "dream teams" or opinoinated top 3 lists. I utilized the Next.js framework to
+                        quickly build and deploy the app.
+                        It also has a built in Google Firebase database so no users opinion is left unsaved. Users may
+                        search and add friends to look at their dream teams,
+                        create new dream teams, co-sign existing teams, and search for dream teams by category.
+                        Futhermore, there is an api that suggests topics if users can't think of a dream team topic.
+                        It also has an authentication through firebase so users can view their previously
+                        create/co-signed teams. Full automatic test coverage through jest mocks also helped me keep
+                        functionality bug free! Post some hot dream teams!
                     </h4>
                 </div>
-
-            </div>
-            <div class="projectsBtn">
-                <div class="project-links">
-                    <a href="projects2.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>
-                        NovaHouse Application</a>
-                    <a href="projects3.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>Spotify
-                        Project</a>
+                <div class="projectsBtn">
+                    <div class="project-links">
+                        <a href="projects2.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>
+                            NovaHouse App</a>
+                        <a href="projects.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>Launch
+                            Consulting Dashboard</a>
+                        <a href="projects3.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>Spotify
+                            Project</a>
+                    </div>
                 </div>
-            </div>
 
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
 
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    let i;
-                    let slides = document.getElementsByClassName("mySlides");
-                    let dots = document.getElementsByClassName("dot");
-                    if (n > slides.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = slides.length }
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
                     }
-                    for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                    }
-                    slides[slideIndex - 1].style.display = "block";
-                    dots[slideIndex - 1].className += " active";
-                }
 
-            </script>
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) { slideIndex = 1 }
+                        if (n < 1) { slideIndex = slides.length }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex - 1].style.display = "block";
+                        dots[slideIndex - 1].className += " active";
+                    }
+
+                </script>
         </section>
     </main>
 </body>
