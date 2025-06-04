@@ -957,6 +957,7 @@ li a:hover {
   .socials {
     max-width: 85%;
     margin-top: 0.4rem;
+    font-size: 0.5rem
     gap: 1rem;
   }
 
@@ -964,6 +965,7 @@ li a:hover {
     max-width: 75%;
     gap: 1rem;
     margin-top: 0.4rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
   }
