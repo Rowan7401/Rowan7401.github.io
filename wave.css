@@ -110,8 +110,8 @@ h8 {
 
 .photostack {
   display: flex;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left:2rem;
+  margin-right: 2rem;
   flex-direction: column;
   justify-self: center;
   max-width: 90%;
@@ -235,6 +235,7 @@ h8 {
   align-items: center;
   justify-content: center;
   margin-top: 0.6rem;
+  margin-left: 0.5rem;
   animation: 0s ease-out 1s 1 falls;
   max-width: 100%;
   width: 100rem;
@@ -782,6 +783,18 @@ li a:hover {
     margin-top: 5rem;
   }
 
+  .custom-icon {
+    width: 4.2rem;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  .cstmBtn {
+    width: 100%;
+    height: 4.9rem;
+    padding: 0.1rem;
+  }
+
   .glass {
     max-width: 75%;
     justify-self: center;
@@ -920,8 +933,8 @@ li a:hover {
   .photostack {
     display: flex;
     flex-direction: column;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
     max-height: 90%;
     max-width: 100%;
   }
