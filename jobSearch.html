@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rowan's Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/jobSearch.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <main>
+        <section class="glass">
+
+            <div class="navbar">
+                <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+                <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
+                <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
+                <a class="navs" href="accomplisments.html"><i class="fa fa-trophy" aria-hidden="true"></i>
+                    Accomplishments</a>
+                <a class="navs" href="courses.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
+                <a class="navs" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
+                <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
+                <a class="navs selected" href="jobSearch.html"><i class="fa fa-trophy" aria-hidden="true"></i>
+                    Job Search</a>
+            </div>
+
+            <div class="dashboard">
+                <h2 class="chart-title">My Job Search Over Time</h2>
+
+                <div class="month-filters">
+                    <label><input type="checkbox" value="Sep '24" checked> Sep '24</label>
+                    <label><input type="checkbox" value="Oct '24" checked> Oct '24</label>
+                    <label><input type="checkbox" value="Nov '24" checked> Nov '24</label>
+                    <label><input type="checkbox" value="Dec '24" checked> Dec '24</label>
+                    <label><input type="checkbox" value="Jan '25" checked> Jan '25</label>
+                    <label><input type="checkbox" value="Feb '25" checked> Feb '25</label>
+                    <label><input type="checkbox" value="Mar '25" checked> Mar '25</label>
+                    <label><input type="checkbox" value="Apr '25" checked> Apr '25</label>
+                    <label><input type="checkbox" value="May '25" checked> May '25</label>
+                    <label><input type="checkbox" value="Jun '25" checked> Jun '25</label>
+                    <label><input type="checkbox" value="Jul '25" checked> Jul '25</label>
+                </div>
+
+                <canvas id="myChart" width="50rem" max-width="80%" height="25rem" max-height="50%" display="block"
+                    box-sizing="content-box"></canvas>
+
+                <h2 class="chart-title" style="margin-top: 2rem;">Application Status Breakdown</h2>
+                
+                <canvas id="stackedChart" width="50rem" max-width="80%" height="25rem" max-height="50%" display="block"
+                    box-sizing="content-box"></canvas>
+
+            </div>
+
+            <script>
+                setTimeout(() => { loaded() }, 1500);
+                async function loaded() {
+                    document.getElementsByClassName("navs")[0].classList.add("loaded");
+                    document.getElementsByClassName("navs")[1].classList.add("loaded");
+                    document.getElementsByClassName("navs")[2].classList.add("loaded");
+                    document.getElementsByClassName("navs")[3].classList.add("loaded");
+                    document.getElementsByClassName("navs")[4].classList.add("loaded");
+                    document.getElementsByClassName("navs")[5].classList.add("loaded");
+                    document.getElementsByClassName("navs")[6].classList.add("loaded");
+                    document.getElementsByClassName("navs")[7].classList.add("loaded");
+                }
+
+                const monthLabels = [
+                    "Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25",
+                    "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25"
+                ];
+
+                const datasetsMaster = {
+                    'Jobs Applied': [16, 10, 2, 0, 10, 3, 5, 23, 28, 39, 17],
+                    'Rejections Received': [3, 4, 2, 0, 2, 3, 2, 15, 11, 14, 10],
+                    'No Responses': [13, 6, 0, 0, 7, 0, 3, 8, 17, 24, 13],
+                    'Interview Processes': [0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0]
+                };
+
+                const chartColors = {
+                    'Jobs Applied': 'rgb(75, 192, 192)',
+                    'Rejections Received': 'rgb(255, 99, 132)',
+                    'No Responses': 'rgb(54, 162, 235)',
+                    'Interview Processes': 'rgb(20, 153, 10)'
+                };
+
+                function getFilteredChartData() {
+                    const checkboxes = document.querySelectorAll('.month-filters input[type="checkbox"]');
+                    const selectedMonths = Array.from(checkboxes)
+                        .filter(cb => cb.checked)
+                        .map(cb => cb.value);
+
+                    const monthIndexes = selectedMonths.map(month => monthLabels.indexOf(month));
+
+                    const filteredLabels = selectedMonths;
+                    const filteredDatasets = Object.entries(datasetsMaster).map(([label, data]) => ({
+                        label,
+                        data: monthIndexes.map(i => data[i]),
+                        fill: false,
+                        borderColor: chartColors[label],
+                        tension: 0.1,
+                    }));
+
+                    return {
+                        labels: filteredLabels,
+                        datasets: filteredDatasets
+                    };
+                }
+
+                // Render the chart
+                let chart = new Chart(document.getElementById('myChart'), {
+                    type: 'line',
+                    data: getFilteredChartData(),
+                    options: {
+                        responsive: true,
+                        plugins: {
+                        title: {
+                            display: true,
+                            text: 'Job Search Journey'
+                        }
+                        },
+                        scales: {
+                        y: {
+                            min: 0,
+                            max: 50,
+                            ticks: {
+                            stepSize: 5
+                            },
+                            title: {
+                            display: true,
+                            text: 'Count'
+                            }
+                        }
+                        }
+                    }
+                });
+
+                document.querySelectorAll('.month-filters input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', () => {
+                        const newData = getFilteredChartData();
+                        chart.data.labels = newData.labels;
+                        chart.data.datasets = newData.datasets;
+                        chart.update();
+                        
+                        // Update stacked chart as well
+                        const newStackedData = getFilteredStackedChartData();
+                        stackedChart.data.labels = newStackedData.labels;
+                        stackedChart.data.datasets = newStackedData.datasets;
+                        stackedChart.update();
+                    });
+                });
+
+                // Stacked Bar Chart Data
+                const stackedDatasetsMaster = {
+                    'Rejections': [3, 4, 2, 0, 2, 3, 2, 15, 11, 14, 10],
+                    'No Responses': [13, 6, 0, 0, 7, 0, 3, 8, 17, 24, 13],
+                    'Interviews': [0, 0, 0, 0, 0, 1, 0, 0, 0, 2, 0]
+                };
+
+                const stackedChartColors = {
+                    'Rejections': 'rgba(255, 99, 132, 0.8)', // Red with transparency
+                    'No Responses': 'rgba(255, 165, 0, 0.8)', // Orange with transparency
+                    'Interviews': 'rgba(75, 192, 0, 0.8)' // Green with transparency
+                };
+
+                const stackedChartBorders = {
+                    'Rejections': 'rgba(255, 99, 132, 0.9)', // Darker red border
+                    'No Responses': 'rgba(255, 165, 0, 0.9)', // Darker orange border
+                    'Interviews': 'rgba(75, 192, 0, 0.9)' // Darker green border
+                };
+
+                function getFilteredStackedChartData() {
+                    const checkboxes = document.querySelectorAll('.month-filters input[type="checkbox"]');
+                    const selectedMonths = Array.from(checkboxes)
+                        .filter(cb => cb.checked)
+                        .map(cb => cb.value);
+
+                    const monthIndexes = selectedMonths.map(month => monthLabels.indexOf(month));
+
+                    const filteredLabels = selectedMonths;
+                    const filteredDatasets = Object.entries(stackedDatasetsMaster).map(([label, data]) => ({
+                        label,
+                        data: monthIndexes.map(i => data[i]),
+                        backgroundColor: stackedChartColors[label],
+                        borderColor: stackedChartBorders[label],
+                        borderWidth: 1.5,
+                        borderRadius: 3,
+                        borderSkipped: false
+                    }));
+
+                    return {
+                        labels: filteredLabels,
+                        datasets: filteredDatasets
+                    };
+                }
+
+                // Render the stacked bar chart
+                let stackedChart = new Chart(document.getElementById('stackedChart'), {
+                    type: 'bar',
+                    data: getFilteredStackedChartData(),
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Monthly Application Status Breakdown'
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    afterBody: function(context) {
+                                        const total = context.reduce((sum, item) => sum + item.parsed.y, 0);
+                                        return `Total: ${total}`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                stacked: true,
+                                title: {
+                                    display: true,
+                                    text: 'Month'
+                                },
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    maxRotation: 0
+                                }
+                            },
+                            y: {
+                                stacked: true,
+                                min: 0,
+                                max: 50,
+                                ticks: {
+                                    stepSize: 5
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Number of Applications'
+                                },
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.1)',
+                                    drawBorder: false
+                                }
+                            }
+                        },
+                        elements: {
+                            bar: {
+                                borderWidth: 1.5,
+                                borderRadius: 3,
+                                borderSkipped: false
+                            }
+                        },
+                        layout: {
+                            padding: {
+                                top: 20,
+                                bottom: 20
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    usePointStyle: true,
+                                    padding: 20,
+                                    pointStyle: 'rect',
+                                    pointStyleWidth: 40,
+                                    pointStyleHeight: 30
+                                }
+                            }
+                        },
+                        barPercentage: 1.0,
+                        categoryPercentage: 1.0
+                    }
+                });
+
+
+            </script>
+        </section>
+    </main>
+</body>

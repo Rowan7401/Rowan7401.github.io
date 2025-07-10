@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rowan's Website</title>
-    <link rel="stylesheet" href="./wave.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/service.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
@@ -20,58 +21,65 @@
           document.getElementsByClassName("navs")[4].classList.add("loaded");
           document.getElementsByClassName("navs")[5].classList.add("loaded");
           document.getElementsByClassName("navs")[6].classList.add("loaded");
+          document.getElementsByClassName("navs")[7].classList.add("loaded");
         }
           
       </script>
       <div class="navbar">
         <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
-        <a class="navs" href="projects.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
+                        <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
         <a class="navs" href="accomplisments.html"><i class="fa fa-trophy" aria-hidden="true"></i> Accomplishments</a>
         <a class="navs" href="courses.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
         <a class="navs selected" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
-        <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
+                        <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
       </div>
       <div class="dashboard">
         <h1 data-shadow="My Volunteer Experience">My Volunteer Experience</h1>
       </div>
-      <h3>St. Thomas of Villanova Day of Service 2021</h3>
-      <div class="accomplishments">
-        <img src="./logos/day_of_service.jpg" alt="logos" class="logos">
-        <div class="box">        
-          <h4>The <a href="https://www.youtube.com/watch?v=1-nlj2RA4M0">St. Thomas of Villanova Day of Service</a>
-            is an annual event where thousands of Villanova students gather and bus off to various service locations around the greater
-            Philadelphia area. This year, I traveled with fellow computer science students and pre-med students 
-            to Drexel Neumann Academy in Chester, PA. We worked together to clean up their school's basement and playground which needed
-            a lot of work. The youtube video link provided above captures the spirit of this awesome Villanovan service event.</h4>
+      
+      <div class="service-container">
+        <div class="service-card university">
+          <img src="./logos/day_of_service.jpg" alt="Day of Service" class="logos">
+          <div class="box">
+            <h3>St. Thomas of Villanova Day of Service 2021</h3>
+            <h4>The <a href="https://www.youtube.com/watch?v=1-nlj2RA4M0">St. Thomas of Villanova Day of Service</a>
+              is an annual event where thousands of Villanova students gather and bus off to various service locations around the greater
+              Philadelphia area. This year, I traveled with fellow computer science students and pre-med students 
+              to Drexel Neumann Academy in Chester, PA. We worked together to clean up their school's basement and playground which needed
+              a lot of work. The youtube video link provided above captures the spirit of this awesome Villanovan service event.</h4>
+          </div>
         </div>
-      </div>
-      <h3>RUIBAL Challenge 2020-2021</h3>
-      <div class="accomplishments">
-        <img src="./assets/ruibal.jpg" alt="logos" class="logos">
-        <div class="box">        
-          <h5>The RUIBAL Challenge, or Reaching Urban Individuals By Action and Love, is a community service club that is centered
-              around its title. Students meet weekly with underprivledged elementary students of the greater Philadelphia area
-              to provide friendship, tutoring, and fun play time. Our section of the club focused on addressing social injustices 
-              in the schools we serve and promoting positive change. During my service, I volunteered for North Light Community Center</h5>
+
+        <div class="service-card education">
+          <img src="./assets/ruibal.jpg" alt="RUIBAL Challenge" class="logos">
+          <div class="box">
+            <h3>RUIBAL Challenge 2020-2021</h3>
+            <h5>The RUIBAL Challenge, or Reaching Urban Individuals By Action and Love, is a community service club that is centered
+                around its title. Students meet weekly with underprivledged elementary students of the greater Philadelphia area
+                to provide friendship, tutoring, and fun play time. Our section of the club focused on addressing social injustices 
+                in the schools we serve and promoting positive change. During my service, I volunteered for North Light Community Center</h5>
+          </div>
         </div>
-      </div>
-      <h3>VOICE Mentoring 2018-2020</h3>
-      <div class="accomplishments">
-        <img src="./logos/voice.png" alt="logos" class="logos">
-        <div class="box">        
-          <h5>The VOICE mentorship program, or Volunteers of Issaquah Changing Education, enlists students who apply to served as a role model and mentor to struggling 
-              elementary students. I mentored two different 5th grade boys at Clark Elementary School during high school, providing academic 
-              and social support through weekly meetings.</h5>
+
+        <div class="service-card education">
+          <img src="./logos/voice.png" alt="VOICE Mentoring" class="logos">
+          <div class="box">
+            <h3>VOICE Mentoring 2018-2020</h3>
+            <h5>The VOICE mentorship program, or Volunteers of Issaquah Changing Education, enlists students who apply to served as a role model and mentor to struggling 
+                elementary students. I mentored two different 5th grade boys at Clark Elementary School during high school, providing academic 
+                and social support through weekly meetings.</h5>
+          </div>
         </div>
-      </div>
-      <h3>Issaquah Aerospace Initiative Service 2020</h3>
-      <div class="accomplishments">
-        <img src="./logos/issaquah-aerospace-initiative-1_1.png" alt="logos" class="logos">
-        <div class="box">        
-          <h5>As a part of the Issaquah Aerospace Initiative club, we participated in the annual science fair at Grand Ridge elementary school.
-              Students volunteered to demonstrate the physics of parachutes and rocket propulsion by having elementary students build 
-              model rockets and launch them with alka seltzer tablets. </h5>
+
+        <div class="service-card science">
+          <img src="./logos/issaquah-aerospace-initiative-1_1.png" alt="Aerospace Initiative" class="logos">
+          <div class="box">
+            <h3>Issaquah Aerospace Initiative Service 2020</h3>
+            <h5>As a part of the Issaquah Aerospace Initiative club, we participated in the annual science fair at Grand Ridge elementary school.
+                Students volunteered to demonstrate the physics of parachutes and rocket propulsion by having elementary students build 
+                model rockets and launch them with alka seltzer tablets.</h5>
+          </div>
         </div>
       </div>
     </section>

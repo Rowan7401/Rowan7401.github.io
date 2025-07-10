@@ -1,103 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rowan's Website</title>
-    <link rel="stylesheet" href="./wave.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="refresh" content="0; url=projects3.html" />
 </head>
-
 <body>
-    <main>
-        <section class="glass">
-            <script>
-                setTimeout(() => { loaded() }, 1500);
-                async function loaded() {
-                    document.getElementsByClassName("navs")[0].classList.add("loaded");
-                    document.getElementsByClassName("navs")[1].classList.add("loaded");
-                    document.getElementsByClassName("navs")[2].classList.add("loaded");
-                    document.getElementsByClassName("navs")[3].classList.add("loaded");
-                    document.getElementsByClassName("navs")[4].classList.add("loaded");
-                    document.getElementsByClassName("navs")[5].classList.add("loaded");
-                    document.getElementsByClassName("navs")[6].classList.add("loaded");
-                }
-
-            </script>
-            <div class="navbar">
-                <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
-                <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
-                <a class="navs selected" href="projects.html"><i class="fa-solid fa-code" aria-hidden="true"></i>
-                    Projects</a>
-                <a class="navs" href="accomplisments.html"><i class="fa fa-trophy"
-                        aria-hidden="true"></i>Accomplishments</a>
-                <a class="navs" href="courses.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
-                <a class="navs" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
-                <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
-            </div>
-            <div class="dashboard">
-                <div class="accomplishments">
-                    <h8>Launch Consulting Group Dashboard</h8>
-                </div>
-                <div class="slideshow-container">
-                    <div class="mySlides fade">
-                        <img class="imgProj" src="./Project img/Dash.png" style="width: 100%;">
-                        <div class="numbertext">1 / 1</div>
-                        <div class="text">Landing Page of Dash</div>
-                    </div>
-
-                </div>
-                <br>
-
-                <div class="gameBox">
-                    <h4>A project I completed during my internship. Hosted on the site are live updated data
-                        like YTD Revenue, Employee seniority status, and GM%. Chart JS methods I created produce the
-                        visuals on the bottom. searching for
-                        I gained a lot of front end experience through this project.
-                    </h4>
-                </div>
-
-            </div>
-
-            <div class="projectsBtn">
-                <div class="project-links">
-                    <a href="projects2.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>
-                        NovaHouse App</a>
-                    <a href="projects3.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>Spotify
-                        Project</a>
-                    <a href="projects4.html"><i class="fa-solid fa-paperclip" aria-hidden="false"></i>Dream Team App
-                    </a>
-                </div>
-            </div>
-
-
-            <script>
-                let slideIndex = 1;
-                showSlides(slideIndex);
-
-                function plusSlides(n) {
-                    showSlides(slideIndex += n);
-                }
-
-                function currentSlide(n) {
-                    showSlides(slideIndex = n);
-                }
-
-                function showSlides(n) {
-                    let i;
-                    let slides = document.getElementsByClassName("mySlides");
-                    if (n > slides.length) { slideIndex = 1 }
-                    if (n < 1) { slideIndex = slides.length }
-                    for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";
-                    }
-
-                    slides[slideIndex - 1].style.display = "block";
-                }
-
-            </script>
-        </section>
-    </main>
+    <p>Redirecting to Spotify Project...</p>
+    <script>
+        window.location.href = "projects3.html";
+    </script>
 </body>
+</html>

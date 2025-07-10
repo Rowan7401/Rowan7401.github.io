@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rowan's Website</title>
-    <link rel="stylesheet" href="./wave.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -24,13 +25,14 @@
                     document.getElementsByClassName("navs")[4].classList.add("loaded");
                     document.getElementsByClassName("navs")[5].classList.add("loaded");
                     document.getElementsByClassName("navs")[6].classList.add("loaded");
+                    document.getElementsByClassName("navs")[7].classList.add("loaded");
                 }
 
             </script>
             <div class="navbar">
                 <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
                 <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
-                <a class="navs selected" href="projects.html"><i class="fa-solid fa-code" aria-hidden="true"></i>
+                <a class="navs selected" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i>
                     Projects</a>
                 <a class="navs" href="accomplisments.html"><i class="fa fa-trophy"
                         aria-hidden="true"></i>Accomplishments</a>
@@ -39,15 +41,15 @@
                 <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
             </div>
             <div class="dashboard">
+                <h8>Spotistatify: Spotify Web API Quiz App</h8>
 
                 <div class="projectsBtn">
-                    <h8>Spotistatify: Spotify Web API Quiz App</h8>
                     <h2 style="color: rgba(3, 180, 3, 0.79);">Click to play:</h2>
                     <div class="gameButton">
                         <a href="https://rowan7401.github.io/Spotify-Web-Api-Quiz-App/">
                             <button class="btn"><i class="fa fa-gamepad" aria-hidden="true"></i></button></a>
                     </div>
-                    <h8 style="color: rgba(3, 180, 3, 0.79);">Repository:</h8>
+                    <h2 style="color: rgba(3, 180, 3, 0.79);">Repository:</h8>
                     <div class="gameButton">
                         <a href="https://github.com/Rowan7401/Spotify-Web-Api-Quiz-App">
                             <button class="btn"><i class="fa-solid fa-file-code" aria-hidden="true"></i></button></a>
@@ -125,36 +127,37 @@
                         </a>
                     </div>
                 </div>
+            </div>
 
-                <script>
-                    let slideIndex = 1;
-                    showSlides(slideIndex);
+            <script>
+                let slideIndex = 1;
+                showSlides(slideIndex);
 
-                    function plusSlides(n) {
-                        showSlides(slideIndex += n);
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
                     }
-
-                    function currentSlide(n) {
-                        showSlides(slideIndex = n);
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
                     }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
 
-                    function showSlides(n) {
-                        let i;
-                        let slides = document.getElementsByClassName("mySlides");
-                        let dots = document.getElementsByClassName("dot");
-                        if (n > slides.length) { slideIndex = 1 }
-                        if (n < 1) { slideIndex = slides.length }
-                        for (i = 0; i < slides.length; i++) {
-                            slides[i].style.display = "none";
-                        }
-                        for (i = 0; i < dots.length; i++) {
-                            dots[i].className = dots[i].className.replace(" active", "");
-                        }
-                        slides[slideIndex - 1].style.display = "block";
-                        dots[slideIndex - 1].className += " active";
-                    }
-
-                </script>
+            </script>
         </section>
     </main>
 </body>

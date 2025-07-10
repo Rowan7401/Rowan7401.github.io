@@ -110,13 +110,83 @@ h8 {
 
 .photostack {
   display: flex;
-  margin-left:2rem;
+  margin-left: 2rem;
   margin-right: 2rem;
   flex-direction: column;
   justify-self: center;
   max-width: 90%;
   height: 90%;
   max-height: 90%;
+}
+
+.chart-title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Month Filters Styling */
+.month-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.month-filters label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4188eb;
+  border: 2px solid transparent;
+}
+
+.month-filters label:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month-filters input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #4188eb;
+  border-radius: 0.25rem;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.month-filters input[type="checkbox"]:checked {
+  background: #4188eb;
+  border-color: #4188eb;
+}
+
+.month-filters input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.month-filters input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(65, 136, 235, 0.3);
 }
 
 .accomplishments {
@@ -981,13 +1051,13 @@ li a:hover {
     flex-direction: column;
   }
 
-   .custom-icon {
+  .custom-icon {
     width: 2.45rem;
     height: auto;
     border-radius: 0.5rem;
   }
 
-   .cstmBtn {
+  .cstmBtn {
     width: 100%;
     height: 2.7rem;
     padding: 0.1rem;
@@ -1010,6 +1080,7 @@ li a:hover {
   li a {
     padding: 0.6rem 0.8rem;
   }
+
 
   .circle1,
   .circle2 {
