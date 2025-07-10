@@ -1,0 +1,128 @@
+/* Service Page Specific Styles */
+.dashboard h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.service-card {
+     background: rgba(255, 255, 255, 0.65);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.02rem 0.06rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 0.5rem solid #4188eb;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Color-coded borders for different service types */
+.service-card.education {
+    border-left: 4px solid #4CAF50; /* Green for education/mentoring */
+}
+
+.service-card.community {
+    border-left: 4px solid #2196F3; /* Blue for community service */
+}
+
+.service-card.science {
+    border-left: 4px solid #FF9800; /* Orange for science/STEM */
+}
+
+.service-card.university {
+    border-left: 4px solid #9C27B0; /* Purple for university events */
+}
+
+.service-card h3 {
+    margin: 0 0 1rem 0;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+}
+
+.service-card .logos {
+    width: 15rem;
+    height: 15rem;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    padding: 0.5rem;
+    background: white;
+}
+
+.service-card .box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card h4,
+.service-card h5 {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.service-card a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+    color: #1976D2;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .service-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .service-card .logos {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+    }
+    
+    .dashboard h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-card .logos {
+        width: 80px;
+        height: 80px;
+    }
+} 

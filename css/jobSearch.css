@@ -1,0 +1,135 @@
+/* Job Search Page Specific Styles */
+
+.dashboard {
+  flex: 1.5;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.chart-title {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Month Filters Styling */
+.month-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.month-filters label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4188eb;
+  border: 2px solid transparent;
+}
+
+.month-filters label:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.month-filters input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid #4188eb;
+  border-radius: 0.25rem;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.month-filters input[type="checkbox"]:checked {
+  background: #4188eb;
+  border-color: #4188eb;
+}
+
+.month-filters input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.month-filters input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(65, 136, 235, 0.3);
+}
+
+/* Chart Canvas Styling */
+#myChart, #stackedChart {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  box-sizing: content-box;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Job Search */
+@media only screen and (max-width: 768px) {
+  .month-filters {
+    gap: 0.3rem;
+  }
+  
+  .month-filters label {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+  
+  #myChart, #stackedChart {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+  
+  .chart-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .month-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .month-filters label {
+    justify-content: center;
+    padding: 0.5rem;
+  }
+  
+  #myChart, #stackedChart {
+    max-width: 100%;
+    padding: 0.25rem;
+  }
+  
+  .chart-title {
+    font-size: 1rem;
+    text-align: center;
+  }
+} 

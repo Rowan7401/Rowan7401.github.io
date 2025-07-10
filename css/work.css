@@ -1,0 +1,137 @@
+/* Work Experience Page Specific Styles */
+
+/* Work Cards */
+.work-card {
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.02rem 0.06rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 0.5rem solid #4188eb;
+}
+
+.work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Color coding for different job types */
+.work-card.internship {
+  border-left-color: #65dfc9;
+}
+
+.work-card.full-time {
+  border-left-color: #4188eb;
+}
+
+.work-card.part-time {
+  border-left-color: #ff6b6b;
+}
+
+.work-card.volunteer {
+  border-left-color: #feca57;
+}
+
+/* Enhanced Typography */
+.work-card h3 {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.work-card h6 {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-style: italic;
+}
+
+.work-card h4 {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+  margin: 0;
+}
+
+/* Logo Styling */
+.work-card .logos {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+  object-fit: contain;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+  margin-right: 1.5rem;
+  background: white;
+  padding: 0.25rem;
+}
+
+.work-card .logos:hover {
+  transform: scale(1.05);
+  border-color: #4188eb;
+  box-shadow: 0 4px 8px rgba(65, 136, 235, 0.2);
+}
+
+/* Layout for accomplishments section */
+.work-card .accomplishments {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.work-card .box {
+  flex: 1;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  width: auto;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .work-card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .work-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .work-card h6 {
+    font-size: 1rem;
+  }
+  
+  .work-card .accomplishments {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .work-card .logos {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .work-card {
+    padding: 1rem;
+  }
+  
+  .work-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .work-card .logos {
+    width: 3rem;
+    height: 3rem;
+  }
+} 

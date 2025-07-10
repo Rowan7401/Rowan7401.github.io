@@ -1,0 +1,172 @@
+/* Photos Page Specific Styles */
+
+.dashboard h1 {
+  text-align: center;
+}
+
+.photostack {
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  flex-direction: column;
+  justify-self: center;
+  max-width: 90%;
+  height: 90%;
+  max-height: 90%;
+}
+
+.polaroids {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.6rem;
+  margin-left: 0.5rem;
+  animation: 0s ease-out 1s 1 falls;
+  max-width: 100%;
+  width: 100rem;
+  font-family: 'Homemade Apple', cursive;
+  margin-bottom: 5rem;
+}
+
+@keyframes falls {
+  0% {
+    transform: scale(0.3) translateY(-100%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+.polaroids li {
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  border: solid 0.5rem #fff;
+  background: #fff;
+  box-shadow: 0 0 0.6rem 0rem #555;
+  transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  top: 1.5rem;
+  border-radius: 0;
+}
+
+.polaroids li img {
+  border-radius: 0;
+}
+
+.polaroids li:hover {
+  top: 0rem;
+  opacity: 0.5;
+}
+
+.polaroids li:nth-child(1) {
+  transform: rotate(10deg);
+}
+
+.polaroids li:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.polaroids li:nth-child(3) {
+  transform: rotate(-10deg);
+}
+
+.polaroids li:nth-child(4) {
+  transform: rotate(20deg);
+}
+
+.polaroids p {
+  margin: -0.2rem 0 0 0;
+}
+
+/* Social Media Icons */
+.socials,
+.socials2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.custom-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4188eb, #65dfc9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-icon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Photos */
+@media only screen and (max-width: 768px) {
+  .photostack {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 95%;
+  }
+  
+  .socials,
+  .socials2 {
+    gap: 0.5rem;
+  }
+  
+  .custom-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  .photostack {
+    max-width: 80%;
+  }
+  
+  .socials,
+  .socials2 {
+    gap: 1.5rem;
+  }
+  
+  .custom-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .photostack {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: 100%;
+  }
+  
+  .polaroids {
+    margin-left: 0.2rem;
+    margin-top: 0.3rem;
+  }
+  
+  .socials,
+  .socials2 {
+    gap: 0.3rem;
+  }
+  
+  .custom-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+} 
