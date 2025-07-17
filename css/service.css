@@ -122,7 +122,8 @@
     }
     
     .service-card .logos {
-        width: 80px;
-        height: 80px;
+        width: 15rem;
+        height: 10rem;
+        padding: 0.1rem;
     }
 } 

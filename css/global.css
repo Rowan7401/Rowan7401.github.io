@@ -450,8 +450,20 @@ li a:hover {
   }
   
   .btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.2rem 0.45rem;
+    font-size: 2rem;
+  }
+
+  .cstmBtn {
+    padding: 0.3rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    height: 2.8rem;
+    
+  }
+
+  .custom-icon {
+    width: 2.15rem;
   }
   
   .logos,
@@ -461,6 +473,12 @@ li a:hover {
   
   .avatar {
     width: 18rem;
+  }
+
+  .socials2 {
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 3rem;
   }
   
   h2 {
@@ -476,5 +494,31 @@ li a:hover {
   .circle1,
   .circle2 {
     display: none;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+    font-size: 0.85rem;
+  }
+  thead, tbody, tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  th, td {
+    word-break: break-word;
+    padding: 0.3rem;
+  }
+  caption {
+    display: block;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: -4vw;
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem 0;
   }
 } 

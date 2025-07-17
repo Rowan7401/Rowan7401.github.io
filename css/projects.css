@@ -365,9 +365,54 @@
     width: auto;
   }
   
+  /* Make the first slideshow-container (NovaHouse) larger on mobile */
+  .slideshow-container {
+    width: 50vw !important;
+    max-width: 90vw !important;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+  
   .projectsBtn {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+  }
+  
+  .dashboard h8,
+  .projectsBtn h8 {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .projectsBtn h2 {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+
+  .project-links {
+    gap: 0.1rem;
+    margin-top: 0.2rem;
+    width: 90vw !important;
+  }
+  
+  .project-links a {
+    font-size: 1em;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .gameButton {
+    font-size: 1.8rem;
+    padding: 0.1rem 0.2rem;
+  }
+  
+  .project-links a i,
+  .project-links a .fa-paperclip {
+    font-size: 0.7rem;
+    margin-right: 0.1rem;
+  }
+  
+  .gameButton i {
+    font-size: 1.3rem;
   }
   
   .gameBox {
