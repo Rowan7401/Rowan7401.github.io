@@ -41,7 +41,7 @@
                     box-sizing="content-box"></canvas>
 
                 <h2 class="chart-title" style="margin-top: 2rem;">Application Status Breakdown</h2>
-                
+
                 <canvas id="stackedChart" width="50rem" max-width="80%" height="25rem" max-height="50%" display="block"
                     box-sizing="content-box"></canvas>
 
@@ -60,217 +60,218 @@
                     document.getElementsByClassName("navs")[7].classList.add("loaded");
                 }
 
-                // Fetch data from JSON and initialize charts
                 fetch('./jobSearchData.json')
-                  .then(res => res.json())
-                  .then(chartData => {
-                    // Dynamically create month checkboxes
-                    const monthFiltersDiv = document.querySelector('.month-filters');
-                    monthFiltersDiv.innerHTML = '';
-                    chartData.labels.forEach((label, idx) => {
-                        if (idx === 0) return; // Skip the first label
-                        // Aug '25 is unchecked by default
-                        const checked = label === "Aug '25" ? '' : 'checked';
-                        monthFiltersDiv.innerHTML += `<label><input type="checkbox" value="${label}" ${checked}> ${label}</label>`;
-                    });
-
-                    // Use the 'series' key for data series
-                    const seriesList = chartData.series || [
-                        'Jobs Applied',
-                        'Rejections Received',
-                        'No Responses',
-                        'Interview Processes'
-                    ];
-
-                    // Helper to get selected months
-                    function getSelectedMonths() {
-                        const checkboxes = document.querySelectorAll('.month-filters input[type="checkbox"]');
-                        return Array.from(checkboxes)
-                            .filter(cb => cb.checked)
-                            .map(cb => cb.value);
-                    }
-
-                    // Helper to get indexes of selected months
-                    function getSelectedIndexes(selectedMonths) {
-                        return selectedMonths.map(month => chartData.labels.indexOf(month));
-                    }
-
-                    // Prepare datasets for line chart
-                    function getFilteredChartData() {
-                        const selectedMonths = getSelectedMonths();
-                        const monthIndexes = getSelectedIndexes(selectedMonths);
-                        const datasets = seriesList.map(seriesName => {
-                            let color;
-                            switch (seriesName) {
-                                case 'Jobs Applied': color = 'rgb(75, 192, 192)'; break;
-                                case 'Rejections Received': color = 'rgb(255, 99, 132)'; break;
-                                case 'No Responses': color = 'rgb(54, 162, 235)'; break;
-                                case 'Interview Processes': color = 'rgb(20, 153, 10)'; break;
-                                default: color = 'rgb(100,100,100)';
-                            }
-                            return {
-                                label: seriesName,
-                                data: monthIndexes.map(i => chartData[seriesName][i]),
-                                fill: false,
-                                borderColor: color,
-                                tension: 0.1,
-                            };
+                    .then(res => res.json())
+                    .then(chartData => {
+                        const monthFiltersDiv = document.querySelector('.month-filters');
+                        monthFiltersDiv.innerHTML = '';
+                        chartData.labels.forEach((label, idx) => {
+                            if (idx === 0) return;  // Aug '25 is unchecked by default
+                            const checked = label === "Aug '25" ? '' : 'checked';
+                            monthFiltersDiv.innerHTML += `<label><input type="checkbox" value="${label}" ${checked}> ${label}</label>`;
                         });
-                        return {
-                            labels: selectedMonths,
-                            datasets
-                        };
-                    }
 
-                    // Prepare datasets for stacked bar chart
-                    function getFilteredStackedChartData() {
-                        const selectedMonths = getSelectedMonths();
-                        const monthIndexes = getSelectedIndexes(selectedMonths);
-                        // Only use the relevant series for the stacked chart
-                        const stackedSeries = [
-                            { name: 'Rejections Received', label: 'Rejections', bg: 'rgba(255, 99, 132, 0.8)', border: 'rgba(255, 99, 132, 0.9)' },
-                            { name: 'No Responses', label: 'No Responses', bg: 'rgba(255, 165, 0, 0.8)', border: 'rgba(255, 165, 0, 0.9)' },
-                            { name: 'Interview Processes', label: 'Interviews', bg: 'rgba(75, 192, 0, 0.8)', border: 'rgba(75, 192, 0, 0.9)' }
+                        // Use the 'series' key for data series
+                        const seriesList = chartData.series || [
+                            'Jobs Applied',
+                            'Rejections Received',
+                            'No Responses',
+                            'Interview Processes',
+                            'Offers' 
                         ];
-                        const datasets = stackedSeries.map(s => ({
-                            label: s.label,
-                            data: monthIndexes.map(i => chartData[s.name][i]),
-                            backgroundColor: s.bg,
-                            borderColor: s.border,
-                            borderWidth: 1.5,
-                            borderRadius: 3,
-                            borderSkipped: false
-                        }));
-                        return {
-                            labels: selectedMonths,
-                            datasets
-                        };
-                    }
 
-                    // Render the line chart
-                    let chart = new Chart(document.getElementById('myChart'), {
-                        type: 'line',
-                        data: getFilteredChartData(),
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Job Search Journey'
+                        // Helper to get selected months
+                        function getSelectedMonths() {
+                            const checkboxes = document.querySelectorAll('.month-filters input[type="checkbox"]');
+                            return Array.from(checkboxes)
+                                .filter(cb => cb.checked)
+                                .map(cb => cb.value);
+                        }
+
+                        // Helper to get indexes of selected months
+                        function getSelectedIndexes(selectedMonths) {
+                            return selectedMonths.map(month => chartData.labels.indexOf(month));
+                        }
+
+                        // Prepare datasets for line chart
+                        function getFilteredChartData() {
+                            const selectedMonths = getSelectedMonths();
+                            const monthIndexes = getSelectedIndexes(selectedMonths);
+                            const datasets = seriesList.map(seriesName => {
+                                let color;
+                                switch (seriesName) {
+                                    case 'Jobs Applied': color = 'rgb(75, 192, 192)'; break;
+                                    case 'Rejections Received': color = 'rgb(255, 99, 132)'; break;
+                                    case 'No Responses': color = 'rgb(54, 162, 235)'; break;
+                                    case 'Interview Processes': color = 'rgb(20, 153, 10)'; break;
+                                    case 'Offers': color = 'rgb(255, 215, 0)'; break; // <-- Add this line (gold/yellow)
+                                    default: color = 'rgb(100,100,100)';
                                 }
-                            },
-                            scales: {
-                                y: {
-                                    min: 0,
-                                    max: 50,
-                                    ticks: {
-                                        stepSize: 5
-                                    },
+                                return {
+                                    label: seriesName,
+                                    data: monthIndexes.map(i => chartData[seriesName][i]),
+                                    fill: false,
+                                    borderColor: color,
+                                    tension: 0.1,
+                                    pointBackgroundColor: color // Optional: makes offer points stand out
+                                };
+                            });
+                            return {
+                                labels: selectedMonths,
+                                datasets
+                            };
+                        }
+
+                        // Prepare datasets for stacked bar chart
+                        function getFilteredStackedChartData() {
+                            const selectedMonths = getSelectedMonths();
+                            const monthIndexes = getSelectedIndexes(selectedMonths);
+                            // Only use the relevant series for the stacked chart
+                            const stackedSeries = [
+                                { name: 'Rejections Received', label: 'Rejections', bg: 'rgba(255, 99, 132, 0.8)', border: 'rgba(255, 99, 132, 0.9)' },
+                                { name: 'No Responses', label: 'No Responses', bg: 'rgba(255, 165, 0, 0.8)', border: 'rgba(255, 165, 0, 0.9)' },
+                                { name: 'Interview Processes', label: 'Interviews', bg: 'rgba(75, 192, 0, 0.8)', border: 'rgba(75, 192, 0, 0.9)' },
+                                { name: 'Offers', label: 'Offers', bg: 'rgba(255, 215, 0, 0.8)', border: 'rgba(255, 215, 0, 0.9)' } // <-- Add this line
+                            ];
+                            const datasets = stackedSeries.map(s => ({
+                                label: s.label,
+                                data: monthIndexes.map(i => chartData[s.name][i]),
+                                backgroundColor: s.bg,
+                                borderColor: s.border,
+                                borderWidth: 1.5,
+                                borderRadius: 3,
+                                borderSkipped: false
+                            }));
+                            return {
+                                labels: selectedMonths,
+                                datasets
+                            };
+                        }
+
+                        // Render the line chart
+                        let chart = new Chart(document.getElementById('myChart'), {
+                            type: 'line',
+                            data: getFilteredChartData(),
+                            options: {
+                                responsive: true,
+                                plugins: {
                                     title: {
                                         display: true,
-                                        text: 'Count'
+                                        text: 'Job Search Journey'
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        min: 0,
+                                        max: 60,
+                                        ticks: {
+                                            stepSize: 5
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Count'
+                                        }
                                     }
                                 }
                             }
-                        }
-                    });
+                        });
 
-                    // Render the stacked bar chart
-                    let stackedChart = new Chart(document.getElementById('stackedChart'), {
-                        type: 'bar',
-                        data: getFilteredStackedChartData(),
-                        options: {
-                            responsive: true,
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Monthly Application Status Breakdown'
-                                },
-                                tooltip: {
-                                    callbacks: {
-                                        afterBody: function(context) {
-                                            const total = context.reduce((sum, item) => sum + item.parsed.y, 0);
-                                            return `Total: ${total}`;
+                        // Render the stacked bar chart
+                        let stackedChart = new Chart(document.getElementById('stackedChart'), {
+                            type: 'bar',
+                            data: getFilteredStackedChartData(),
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    title: {
+                                        display: true,
+                                        text: 'Monthly Application Status Breakdown'
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            afterBody: function (context) {
+                                                const total = context.reduce((sum, item) => sum + item.parsed.y, 0);
+                                                return `Total: ${total}`;
+                                            }
+                                        }
+                                    },
+                                    legend: {
+                                        labels: {
+                                            usePointStyle: true,
+                                            padding: 12,
+                                            pointStyle: 'rect',
+                                            font: {
+                                                size: 12
+                                            },
+                                            boxWidth: 12,
+                                            boxHeight: 10
                                         }
                                     }
                                 },
-                                legend: {
-                                    labels: {
-                                        usePointStyle: true,
-                                        padding: 12,
-                                        pointStyle: 'rect',
-                                        font: {
-                                            size: 12
+                                scales: {
+                                    x: {
+                                        stacked: true,
+                                        title: {
+                                            display: true,
+                                            text: 'Month'
                                         },
-                                        boxWidth: 12,
-                                        boxHeight: 10
-                                    }
-                                }
-                            },
-                            scales: {
-                                x: {
-                                    stacked: true,
-                                    title: {
-                                        display: true,
-                                        text: 'Month'
+                                        grid: {
+                                            display: false
+                                        },
+                                        ticks: {
+                                            maxRotation: 0
+                                        }
                                     },
-                                    grid: {
-                                        display: false
-                                    },
-                                    ticks: {
-                                        maxRotation: 0
+                                    y: {
+                                        stacked: true,
+                                        min: 0,
+                                        max: 60,
+                                        ticks: {
+                                            stepSize: 5
+                                        },
+                                        title: {
+                                            display: true,
+                                            text: 'Number of Applications'
+                                        },
+                                        grid: {
+                                            color: 'rgba(0, 0, 0, 0.1)',
+                                            drawBorder: false
+                                        }
                                     }
                                 },
-                                y: {
-                                    stacked: true,
-                                    min: 0,
-                                    max: 50,
-                                    ticks: {
-                                        stepSize: 5
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: 'Number of Applications'
-                                    },
-                                    grid: {
-                                        color: 'rgba(0, 0, 0, 0.1)',
-                                        drawBorder: false
+                                elements: {
+                                    bar: {
+                                        borderWidth: 1.5,
+                                        borderRadius: 3,
+                                        borderSkipped: false
                                     }
-                                }
-                            },
-                            elements: {
-                                bar: {
-                                    borderWidth: 1.5,
-                                    borderRadius: 3,
-                                    borderSkipped: false
-                                }
-                            },
-                            layout: {
-                                padding: {
-                                    top: 20,
-                                    bottom: 20
-                                }
-                            },
-                            barPercentage: 1.0,
-                            categoryPercentage: 1.0
-                        }
-                    });
+                                },
+                                layout: {
+                                    padding: {
+                                        top: 20,
+                                        bottom: 20
+                                    }
+                                },
+                                barPercentage: 1.0,
+                                categoryPercentage: 1.0
+                            }
+                        });
 
-                    // Add event listeners to checkboxes
-                    document.querySelectorAll('.month-filters input[type="checkbox"]').forEach(cb => {
-                        cb.addEventListener('change', () => {
-                            const newData = getFilteredChartData();
-                            chart.data.labels = newData.labels;
-                            chart.data.datasets = newData.datasets;
-                            chart.update();
+                        // Add event listeners to checkboxes
+                        document.querySelectorAll('.month-filters input[type="checkbox"]').forEach(cb => {
+                            cb.addEventListener('change', () => {
+                                const newData = getFilteredChartData();
+                                chart.data.labels = newData.labels;
+                                chart.data.datasets = newData.datasets;
+                                chart.update();
 
-                            const newStackedData = getFilteredStackedChartData();
-                            stackedChart.data.labels = newStackedData.labels;
-                            stackedChart.data.datasets = newStackedData.datasets;
-                            stackedChart.update();
+                                const newStackedData = getFilteredStackedChartData();
+                                stackedChart.data.labels = newStackedData.labels;
+                                stackedChart.data.datasets = newStackedData.datasets;
+                                stackedChart.update();
+                            });
                         });
                     });
-                  });
             </script>
         </section>
     </main>
