@@ -8,6 +8,24 @@
   box-sizing: border-box;
   position: relative;
 }
+:root {
+  /* Colors */
+  --primary-color: #4188eb;
+  --accent-color: #65dfc9;
+  --bg-gradient: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  --glass-bg: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --text-dark: #333333;
+
+  /* Typography */
+  --font-display: 'Righteous', serif;
+  --font-sans: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
+
+  /* Layout Breakpoints (For cleaner media queries) */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-tv: 2000px;
+}
 
 /* Base Styles */
 main {
@@ -45,13 +63,14 @@ main {
 }
 
 /* Headings */
-h1 {
+/* h1 {
   display: inline-block;
   color: #4188eb;
   font-family: 'Righteous', serif;
   font-size: 3em;
   text-shadow: 0.06em 0.06em 0 hsla(230, 40%, 50%, 1);
-}
+} */
+
 
 h2,
 h3,

@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+:root {
+  /* Colors */
+  --primary-color: #4188eb;
+  --accent-color: #65dfc9;
+  --bg-gradient: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  --glass-bg: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --text-dark: #333333;
+
+  /* Typography */
+  --font-display: 'Righteous', serif;
+  --font-sans: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
+
+  /* Layout Breakpoints (For cleaner media queries) */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-tv: 2000px;
+}
+
+/* Typography Engine */
+h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--primary-color);
+    text-shadow: 0.06em 0.06em 0 hsla(230, 40%, 50%, 1);
+    text-align: center;
+  }
+  
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+  }
+  
+  /* Instead of h7/h8, use standard semantic tags with clear modifier classes */
+  .text-subtitle { font-size: 1.75rem; font-weight: bold; }
+  .text-caption { font-size: 1.25rem; font-weight: bolder; margin-bottom: 0.8rem; }
+  .text-body { font-size: 1rem; line-height: 1.5; color: var(--text-dark); }
+
+  .glass-panel {
+    background: var(--glass-bg);
+    border-radius: 2rem;
+    backdrop-filter: blur(2rem);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: fadeInAnimation ease 3s forwards;
+    width: clamp(50rem, 75vw, 80rem);
+    min-height: 80vh;
+  }
+
+  .card {
+    background: white;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Spacing is now dictated by its parent wrapper, not hardcoded widths */
+  }
+  
+  .card--interactive:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Responsive Grid Wrapper */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  /* Flex Dashboard */
+  .dashboard-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+  }
