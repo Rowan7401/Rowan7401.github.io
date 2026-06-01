@@ -32,10 +32,16 @@
   --rounded-br: 4rem;
 
   /* Standard Spacings */
-  --spacing-xs: 0.1rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 3rem;
+  --spacing-1: 0.1rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1.5rem;
+  --spacing-5: 2rem;
+  --spacing-6: 2.75rem;
+  --spacing-7: 5rem;
+  --spacing-8: 10rem;
+  --spacing-9: 15rem;
+  --spacing-10: 20rem;
 }
 
 /* Base Layout */
@@ -258,33 +264,32 @@ img {
   justify-content: space-evenly;
   text-align: center;
 }
+
 .landing-panel {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-  /* Flex Dashboard */
-  .dashboard-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-md);
-    width: 100%;
-  }
+/* Flex Dashboard */
+.dashboard-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-4);
+  width: 100%;
+  top: 10rem;
+}
 
 /* Social Media Icons */
-.socials,
-.socials2 {
+.socials {
   display: flex;
-  max-width: 75%;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0.6rem;
-  gap: 1rem;
-  animation: 0s ease-out 1s 1 falls;
+  column-gap: var(--spacing-5);
 }
 
+/* Style for VSCO icon since it was deprecated in icon pack */
 .custom-icon {
   width: 2.35rem;
   margin-bottom: 0.2rem;
@@ -397,8 +402,8 @@ li a:hover {
 .circle1 {
   width: 20rem;
   height: 20rem;
-  top: 10%;
-  right: -5%;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
   animation: slideInFromRight 1s ease;
 }
 
@@ -414,10 +419,10 @@ li a:hover {
 }
 
 .circle2 {
-  width: 15rem;
-  height: 15rem;
-  bottom: 10%;
-  left: -5%;
+  width: 20rem;
+  height: 20rem;
+  bottom: var(--spacing-2);
+  left: var(--spacing-2);
   animation: slideInFromLeft 1s ease;
 }
 
