@@ -84,10 +84,7 @@ h1 {
 }
 
 h2,
-h3,
-h4,
 h5,
-h6,
 h7,
 h8 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -103,17 +100,32 @@ h2 {
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: clamp(1.25rem, 3.5vw, 2rem);
+  font-family: var(--font-sans);
+  color: #4188eb;
+  font-weight: bold;
 }
 
-h4,
+h4 {
+  font-size: 1.1rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--text-dark);
+}
+
 h5 {
   font-size: 1rem;
   line-height: 150%;
   font-weight: bold;
 }
 
-h6,
+h6 {
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
 h7 {
   font-size: 1.75rem;
   font-weight: bold;
@@ -272,6 +284,13 @@ img {
   align-items: center;
 }
 
+.list-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}  
+
 /* Flex Dashboard */
 .dashboard-info {
   display: flex;
@@ -425,6 +444,94 @@ li a:hover {
   left: var(--spacing-2);
   animation: slideInFromLeft 1s ease;
 }
+
+/* Work Cards */
+.list-card {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 1rem;
+  gap: 0.75rem;
+  padding: 2rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 0.02rem 0.06rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 0.5rem solid #4188eb;
+}
+
+.list-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo Styling */
+.logos {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 0.5rem;
+  object-fit: contain;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+  margin-right: 1.5rem;
+  background: white;
+  padding: 0.25rem;
+}
+
+.logos:hover {
+  transform: scale(1.05);
+  border-color: #4188eb;
+  box-shadow: 0 4px 8px rgba(65, 136, 235, 0.2);
+}
+
+.list-card-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .list-card {
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .list-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .list-card h6 {
+    font-size: 1rem;
+  }
+  
+  .list-card .accomplishments {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .list-card .logos {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .list-card {
+    padding: 1rem;
+  }
+  
+  .list-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .list-card .logos {
+    width: 7rem;
+    height: 7rem;
+    padding: 0.1rem;
+  }
+} 
 
 /* Responsive Design */
 @media screen and (max-width: 50rem) {

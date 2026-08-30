@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rowan's Website</title>
   <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/work.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/png" href="logos/favicon.png" />
@@ -14,7 +13,7 @@
 
 <body>
   <main>
-    <section class="glass">
+    <section class="glass-panel">
       <script>
         setTimeout(() => { loaded() }, 1500);
         async function loaded() {
@@ -32,33 +31,31 @@
       <div class="navbar">
         <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         <a class="navs selected" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
-                        <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
+        <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
         <a class="navs" href="accomplishments.html"><i class="fa fa-trophy" aria-hidden="true"></i> Accomplishments</a>
         <a class="navs" href="courses.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
         <a class="navs" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
-                        <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
+        <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
       </div>
-      <div class="dashboard">
-        <div class="work-card internship">
+      <div class="list-panel">
+        <div class="list-card" style="border-left-color: #F16827;">
           <h3>Revature Pro - Java Intern Backend</h3>
-          <h6>Feb 2025-Apr 2025</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">Feb 2025-Apr 2025</h6>  
+          <div class="list-card-box">
             <img src="./logos/revature.jpg" alt="logos" class="logos">
-            <div class="box">
-              <h4> Mastered programming skills in Java, SQL, RESTful API Construction and Spring Framework.
-                Implemented project work including construction of functional REST APIs using Test Driven Development
-                methodologies. Completed 110 Coding Activities and showcased comprehension through fourteen (14) graded
-                evaluations.
-                Leveraged Java APIs to write algorithms to solve various challenges and problem sets.
-              </h4>
-            </div>
+            <h4> Mastered programming skills in Java, SQL, RESTful API Construction and Spring Framework.
+              Implemented project work including construction of functional REST APIs using Test Driven Development
+              methodologies. Completed 110 Coding Activities and showcased comprehension through fourteen (14) graded
+              evaluations.
+              Leveraged Java APIs to write algorithms to solve various challenges and problem sets.
+            </h4>
           </div>
         </div>
 
-        <div class="work-card full-time">
+        <div class="list-card" style="border-left-color: #1E60A7;">
           <h3>Costco Wholesale (Issaquah) - Front End Assistant</h3>
-          <h6>Jun 2024-Jun 2025</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">Jun 2024-Jun 2025</h6>
+          <div class="list-card-box">
             <img src="./logos/Costco.png" alt="logos" class="logos">
             <div class="box">
               <h4> Provide exceptional customer service at top 5 highest trafficked Costco warehouse, training new front
@@ -73,10 +70,10 @@
           </div>
         </div>
 
-        <div class="work-card part-time">
+        <div class="list-card" style="border-left-color: #3A3E44;">
           <h3>Villanova Learning Studio - Computer Science Tutor</h3>
-          <h6>Oct 2023-May 2024</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">Oct 2023-May 2024</h6>
+          <div class="list-card-box">
             <img src="./logos/university-main-logo-1.jpg" alt="logos" class="logos">
             <div class="box">
               <h4>Tutored and mentored beginner computer science students 6+ hours a week in programmatic tasks.
@@ -90,10 +87,10 @@
           </div>
         </div>
 
-        <div class="work-card internship">
+        <div class="list-card" style="border-left-color: #803994;">
           <h3>Launch Consulting Group — Technology, Stratgey, & Architecture Intern</h3>
-          <h6>June 2023-August 2023</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">June 2023-August 2023</h6>
+          <div class="list-card-box">
             <img src="./logos/lcg.jpg" alt="logos" class="logos">
             <div class="box">
               <h4>I was selected to participate in an 8-week long internship program with LCG. On my team of three interns
@@ -108,10 +105,10 @@
           </div>
         </div>
 
-        <div class="work-card internship">
+        <div class="list-card" style="border-left-color: #FFE102">
           <h3>Vatican Telecommunications Office — Internet Service Provider Intern</h3>
-          <h6>September 2022-December 2022</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">September 2022-December 2022</h6>
+          <div class="list-card-box">
             <img src="./logos/vatican flag.png" alt="logos" class="logos">
             <div class="box">
               <h4>Working as an intern at the Vatican was a very unique experience. I passed the Swiss guards everyday
@@ -125,10 +122,10 @@
             </div>
           </div>
         </div>
-        <div class="work-card part-time">
+        <div class="list-card" style="border-left-color: #FA6300">
           <h3>The Home Depot — Hardware Associate</h3>
-          <h6>June 2022-August 2022</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">June 2022-August 2022</h6>
+          <div class="list-card-box">
             <img src="./logos/home_depot.png" alt="logos" class="logos">
             <div class="box">
               <h4>Working as a Hardware Associate, I provide customer service to customers ranging from contractors who
@@ -145,10 +142,10 @@
             </div>
           </div>
         </div>
-        <div class="work-card part-time">
+        <div class="list-card" style="border-left-color: #FFE015">
           <h3>Quality Food Center (QFC) — Produce Clerk and Cashier</h3>
-          <h6>July 2019-December 2021</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">July 2019-December 2021</h6>
+          <div class="list-card-box">
             <img src="./logos/QFC.png" alt="logos" class="logos">
             <div class="box">
               <h4>As a produce clerk, I maintain the produce stock for large Kroger grocery store. I ensure all products
@@ -158,10 +155,10 @@
             </div>
           </div>
         </div>
-        <div class="work-card volunteer">
+        <div class="list-card" style="border-left-color: #B0D108;">
           <h3>Eastside Youth Soccer Association (EYSA) — Grade 8 Referee</h3>
-          <h6>September 2015-November 2018</h6>
-          <div class="accomplishments">
+          <h6 style="font-style: italic">September 2015-November 2018</h6>
+          <div class="list-card-box">
             <img src="./logos/EYSA.jfif" alt="logos" class="logos">
             <div class="box">
               <h4>As a grade 8 youth soccer refereee, I worked as the center referee for competitive rec soccer games for
