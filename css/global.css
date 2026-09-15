@@ -61,7 +61,7 @@ main {
   border: 1px solid var(--glass-border);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   animation: fadeInAnimation ease 3s forwards;
-  width: clamp(50rem, 75vw, 80rem);
+  width: min(75vw, 80rem);
   min-height: 80vh;
 }
 
@@ -289,6 +289,8 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 0 2rem;
 }  
 
 /* Flex Dashboard */
@@ -457,6 +459,7 @@ li a:hover {
   box-shadow: 0 0.02rem 0.06rem rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border-left: 0.5rem solid #4188eb;
+  width: 100%;
 }
 
 .list-card:hover {
@@ -488,10 +491,35 @@ li a:hover {
   flex-direction: row;
   align-items: center;
   text-align: left;
+  min-width: 0;
 }
 
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
+  main {
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .glass-panel {
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+  }
+
+  .navbar {
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .navs {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.65rem;
+  }
+
+  .list-panel {
+    padding: 0 1rem;
+  }
+
   .list-card {
     padding: 1.5rem;
     margin: 1rem 0;
@@ -515,11 +543,40 @@ li a:hover {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+
+  .list-card-box {
+    align-items: flex-start;
+  }
+
+  .list-card-box .box,
+  .list-card-box h4 {
+    min-width: 0;
+  }
 }
 
 @media only screen and (max-width: 480px) {
+  .glass-panel {
+    border-radius: 1rem;
+  }
+
+  .navbar {
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .navs {
+    flex: 1 1 calc(50% - 0.25rem);
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.35rem;
+  }
+
+  .list-panel {
+    padding: 0 0.5rem;
+  }
+
   .list-card {
     padding: 1rem;
+    margin: 0.75rem 0;
   }
   
   .list-card h3 {
@@ -531,22 +588,32 @@ li a:hover {
     height: 7rem;
     padding: 0.1rem;
   }
+
+  .list-card-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .list-card-box .logos {
+    margin: 0 0 0.75rem;
+  }
+
+  .list-card-box h4 {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
 } 
 
 /* Responsive Design */
 @media screen and (max-width: 50rem) {
-  .navbar navs {
+  .navbar .navs {
     font-size: 0.8rem;
     padding: 0.3rem 0.6rem;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .glass {
-    width: 95%;
-    min-height: 90vh;
-  }
-  
   .btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -567,7 +634,7 @@ li a:hover {
 }
 
 @media only screen and (min-width: 2000px) {
-  .glass {
+  .glass-panel {
     width: 70%;
     min-height: 85vh;
   }
@@ -588,11 +655,6 @@ li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
-  .glass {
-    width: 98%;
-    min-height: 95vh;
-  }
-  
   .btn {
     padding: 0.2rem 0.45rem;
     font-size: 2rem;
