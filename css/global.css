@@ -48,6 +48,7 @@
 main {
   min-height: 100vh;
   width: 100%;
+  padding: 1rem;
   background: linear-gradient(to right top, #65dfc9, #6cdbeb);
   display: flex;
   align-items: center;
@@ -62,7 +63,9 @@ main {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   animation: fadeInAnimation ease 3s forwards;
   width: min(75vw, 80rem);
+  max-width: 100%;
   min-height: 80vh;
+  overflow: visible;
 }
 
 @keyframes fadeInAnimation {
@@ -145,6 +148,23 @@ p {
 }
 
 /* Navigation */
+.menu-toggle,
+.nav-backdrop {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
@@ -620,6 +640,35 @@ li a:hover {
 }
 
 @media only screen and (max-width: 768px) {
+  .glass-panel {
+    width: 95%;
+    min-height: 90vh;
+  }
+
+  .landing-panel {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1rem 3rem;
+  }
+
+  .avatar {
+    width: min(75vw, 20rem);
+    top: 0;
+    left: 0;
+  }
+
+  .dashboard-info {
+    top: 0;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  h2 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+
   .btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
@@ -661,6 +710,66 @@ li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
+  body:has(.menu-toggle) .navbar {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 2rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    padding: 2rem 1.25rem 1.25rem;
+    overflow: hidden;
+  }
+
+  body:has(.menu-toggle) .menu-toggle {
+    display: grid;
+    position: absolute;
+    z-index: 12;
+    top: 0.25rem;
+    right: 1rem;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 0;
+    background: transparent;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.35rem;
+  }
+
+  body:has(.menu-toggle) .navs {
+    display: none;
+  }
+
+  body:has(.menu-toggle).menu-open .navbar {
+    max-height: 35rem;
+  }
+
+  body:has(.menu-toggle).menu-open .navbar .navs {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body:has(.menu-toggle) .nav-backdrop {
+    position: fixed;
+    z-index: 8;
+    inset: 0;
+    background: rgba(31, 38, 135, 0.25);
+  }
+
+  body:has(.menu-toggle).menu-open .nav-backdrop {
+    display: block;
+  }
+
+  body:has(.menu-toggle) .landing-panel {
+    width: 100%;
+    padding-top: 4rem;
+  }
+
   .btn {
     padding: 0.2rem 0.45rem;
     font-size: 2rem;
@@ -677,6 +786,12 @@ li a:hover {
   .custom-icon {
     width: 2.15rem;
   }
+
+  .socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
   
   .logos,
   .logos2 {
@@ -684,7 +799,7 @@ li a:hover {
   }
   
   .avatar {
-    width: 18rem;
+    width: min(75vw, 18rem);
   }
 
   .socials2 {
