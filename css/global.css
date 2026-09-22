@@ -504,6 +504,334 @@ li a:hover {
   text-align: left;
 }
 
+/* Projects page */
+.projects-dashboard {
+  width: 100%;
+  padding: 1.5rem 1rem 3rem;
+  margin: 0 auto;
+}
+
+.projects-hero {
+  width: 100%;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem 0.5rem 0;
+  text-align: center;
+}
+
+.projects-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.04;
+  margin-bottom: 0.75rem;
+  color: var(--primary-color);
+  text-shadow: 0.06em 0.06em 0 hsla(230, 40%, 50%, 1);
+}
+
+.projects-hero p {
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(22, 27, 38, 0.8);
+}
+
+.projects-quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.projects-quicklinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.7rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--primary-color);
+  font-weight: 700;
+  border: 1px solid rgba(65, 136, 235, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.projects-quicklinks a:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(41, 90, 173, 0.12);
+}
+
+.project-panel {
+  width: 100%;
+  margin: 0 auto 4rem;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  gap: 1.25rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+
+.project-panel.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-copy {
+  text-align: left;
+  padding: 0.5rem 0.25rem;
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-dark);
+  letter-spacing: normal;
+  text-transform: none;
+  font-weight: 400;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.project-copy h2 {
+  margin: 0.8rem 0 0.8rem;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  line-height: 1.3;
+  color: var(--primary-color);
+  text-align: left;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+.project-copy .project-copy-block {
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+}
+
+.project-copy p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(23, 34, 52, 0.82);
+  font-family: var(--font-sans);
+}
+
+.project-list {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+.project-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 0;
+  background: transparent;
+  color: rgba(23, 34, 52, 0.8);
+  line-height: 1.6;
+}
+
+.project-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #1aa786;
+  font-weight: 700;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn {
+  background: #4188eb;
+  color: white;
+  box-shadow: none;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.7);
+  color: #1f4f9a;
+  border: 1px solid rgba(65, 136, 235, 0.18);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.project-visual {
+  width: 100%;
+}
+
+.project-slideshow {
+  position: relative;
+  width: 100%;
+  min-height: 23rem;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 18px 38px rgba(58, 90, 140, 0.1);
+}
+
+.project-slideshow .slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.project-slideshow .slide.is-active {
+  display: block;
+}
+
+.project-slideshow img,
+.single-project-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+.project-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.5);
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.project-arrow:hover {
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.project-arrow.prev {
+  left: 1rem;
+}
+
+.project-arrow.next {
+  right: 1rem;
+}
+
+.slide-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
+.slide-dots button {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(65, 136, 235, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.slide-dots button.is-active {
+  background: #4188eb;
+  transform: scale(1.15);
+}
+
+.single-project-image {
+  min-height: 23rem;
+  object-fit: contain;
+  background: rgba(15, 23, 42, 0.03);
+}
+
+@media (max-width: 900px) {
+  .project-panel {
+    grid-template-columns: 1fr;
+    padding: 1.4rem;
+  }
+
+  .project-copy {
+    text-align: center;
+  }
+
+  .project-copy h2 {
+    text-align: center;
+  }
+
+  .project-list {
+    text-align: left;
+  }
+
+  .project-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-dashboard {
+    padding-inline: 0.75rem;
+  }
+
+  .projects-hero {
+    padding-top: 0.5rem;
+  }
+
+  .projects-quicklinks {
+    gap: 0.55rem;
+  }
+
+  .projects-quicklinks a {
+    width: 100%;
+  }
+
+  .project-panel {
+    margin-bottom: 1.5rem;
+    border-radius: 1.2rem;
+  }
+
+  .project-slideshow {
+    min-height: 18rem;
+  }
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 768px) {
   main {
