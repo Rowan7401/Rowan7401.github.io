@@ -13,20 +13,12 @@
 
 <body>
   <main>
-    <section class="glass-panel">
-      <script>
-        setTimeout(() => { loaded() }, 1500);
-        async function loaded() {
-          document.querySelectorAll(".navs").forEach((nav) => nav.classList.add("loaded"));
-        }
-
-      </script>
-      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+    <section class="glass-panel">      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
         <span class="sr-only">Open navigation</span>
       </button>
       <div class="nav-backdrop" aria-hidden="true"></div>
-      <nav class="navbar" id="site-navigation" aria-label="Primary navigation">
+<nav class="navbar" id="site-navigation" aria-label="Primary navigation">
         <a class="navs selected" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
         <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
@@ -35,37 +27,7 @@
         <a class="navs" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
         <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
       </nav>
-      <script>
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navBackdrop = document.querySelector(".nav-backdrop");
-        const navigationLinks = document.querySelectorAll(".navs");
-
-        function closeNavigation() {
-          document.body.classList.remove("menu-open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.querySelector("i").className = "fa-solid fa-bars";
-          menuToggle.querySelector(".sr-only").textContent = "Open navigation";
-        }
-
-        function toggleNavigation() {
-          const isOpen = document.body.classList.toggle("menu-open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-          menuToggle.querySelector("i").className = isOpen
-            ? "fa-solid fa-xmark"
-            : "fa-solid fa-bars";
-          menuToggle.querySelector(".sr-only").textContent = isOpen
-            ? "Close navigation"
-            : "Open navigation";
-        }
-
-        menuToggle.addEventListener("click", toggleNavigation);
-        navBackdrop.addEventListener("click", closeNavigation);
-        navigationLinks.forEach((link) => link.addEventListener("click", closeNavigation));
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") closeNavigation();
-        });
-      </script>
-      <div class="landing-panel">
+<div class="landing-panel">
         <img src="./assets/Del mar Headshot cropped.jpg" alt="Avatar" class="avatar">
         <div class="dashboard-info">
           <h1 data-shadow='Rowan Dillon'>Rowan Dillon</h1>
@@ -101,6 +63,7 @@
     <div class="circle2"></div>
   </main>
 
+  <script src="./js/navigation.js"></script>
 </body>
 
 </html>
