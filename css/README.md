@@ -21,11 +21,7 @@ This directory contains the modularized CSS files for Rowan's website. The CSS h
   - Chart canvas styling
   - Responsive design for job search components
 
-- **`projects.css`** - Styles for all project pages (projects.html, projects2.html, projects3.html, projects4.html):
-  - Project box layouts
-  - Slideshow components
-  - Project links and buttons
-  - Image styling for project screenshots
+- Project page styling has been folded into `global.css` so the main Projects page stays aligned with the site-wide glass-panel system.
 
 - **`photos.css`** - Styles for the photos page:
   - Photo stack layout
@@ -47,7 +43,6 @@ Each HTML file now includes the appropriate CSS files:
 
 <!-- Page-specific styles -->
 <link rel="stylesheet" href="./css/jobSearch.css" />
-<link rel="stylesheet" href="./css/projects.css" />
 <link rel="stylesheet" href="./css/photos.css" />
 <link rel="stylesheet" href="./css/accomplishments.css" />
 ```
