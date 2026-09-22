@@ -7,26 +7,28 @@
   <title>Rowan's Website</title>
   <link rel="stylesheet" href="./css/global.css" />
   <link rel="stylesheet" href="./css/photos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="icon" type="image/png" href="logos/favicon.png" />
 </head>
 
 <body>
   <main>
-    <section class="glass">      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+    <section class="glass-panel">
+      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
         <span class="sr-only">Open navigation</span>
       </button>
       <div class="nav-backdrop" aria-hidden="true"></div>
-<div class="navbar">
+      <nav class="navbar" id="site-navigation" aria-label="Primary navigation">
         <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         <a class="navs" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
-                        <a class="navs" href="projects3.html"><i class="fa fa-file-code-o" aria-hidden="true"></i> Projects</a>
+        <a class="navs" href="projects3.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
         <a class="navs" href="accomplishments.html"><i class="fa fa-trophy" aria-hidden="true"></i> Accomplishments</a>
         <a class="navs" href="courses.html"><i class="fa fa-book" aria-hidden="true"></i> Courses</a>
         <a class="navs" href="service.html"><i class="fa fa-child" aria-hidden="true"></i> Community Service</a>
         <a class="navs selected" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
-      </div>
+      </nav>
       <div class="dashboard">
         <h1>My Photos</h1>
       </div>
