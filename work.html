@@ -13,17 +13,20 @@
 
 <body>
   <main>
-    <section class="glass-panel">      <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
+    <section class="glass-panel">
+      <div class="site-header">
+        <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
         <span class="sr-only">Open navigation</span>
       </button>
       <div class="nav-backdrop" aria-hidden="true"></div>
-<div class="navbar">
+      <nav class="navbar" id="site-navigation" aria-label="Primary navigation">
         <a class="navs" href="index.html"><i class="fa fa-fw fa-home"></i> Home</a>
         <a class="navs selected" href="work.html"><i class="fa fa-briefcase" aria-hidden="true"></i> Work Experience</a>
         <a class="navs" href="projects.html"><i class="fa-solid fa-code" aria-hidden="true"></i> Projects</a>
         <a class="navs" href="accomplishments.html"><i class="fa fa-trophy" aria-hidden="true"></i> Accomplishments</a>
         <a class="navs" href="photos.html"><i class="fa fa-camera" aria-hidden="true"></i> Photos</a>
+      </nav>
       </div>
       <div class="list-panel">
         <div class="list-card" style="border-left-color: #F16827;">
