@@ -157,6 +157,11 @@ p {
   display: none;
 }
 
+.site-header {
+  position: relative;
+  z-index: 3;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1047,24 +1052,30 @@ li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
-  body:has(.menu-toggle) .navbar {
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-header {
+    height: 3rem;
+  }
+
+  .site-header .navbar {
+    display: none;
     position: absolute;
     z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
-    max-height: 2rem;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
     gap: 0.75rem;
-    padding: 2rem 1.25rem 1.25rem;
-    border-radius: 2rem 2rem 0 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
+    padding: 3rem 1.25rem max(1.5rem, calc(1rem + env(safe-area-inset-bottom)));
+    border-radius: 1rem;
   }
 
-  body:has(.menu-toggle) .menu-toggle {
+  .site-header .menu-toggle {
     display: grid;
     position: absolute;
     z-index: 12;
@@ -1082,33 +1093,32 @@ li a:hover {
     font-size: 1.35rem;
   }
 
-  body:has(.menu-toggle) .menu-toggle:focus-visible,
-  body:has(.menu-toggle) .navs:focus-visible {
+  .site-header .menu-toggle:focus-visible,
+  .site-header .navs:focus-visible {
     outline: 0.2rem solid var(--primary-color);
     outline-offset: 0.15rem;
   }
 
-  body:has(.menu-toggle) .navs {
-    display: none;
+  .site-header .navs {
+    display: block;
     padding: 0.75rem 1rem;
     text-align: left;
     animation: none;
+    opacity: 1;
     transform: none;
-    pointer-events: none;
     transition: none;
   }
 
-  body:has(.menu-toggle).menu-open .navbar {
-    max-height: 35rem;
+  .menu-open .site-header .navbar {
+    display: flex;
   }
 
-  body:has(.menu-toggle).menu-open .navbar .navs {
-    display: block;
+  .site-header .navs.loaded {
     opacity: 1;
-    pointer-events: auto;
+    transform: none;
   }
 
-  body:has(.menu-toggle) .nav-backdrop {
+  .site-header .nav-backdrop {
     position: fixed;
     z-index: 8;
     inset: 0;
@@ -1118,19 +1128,18 @@ li a:hover {
     transition: opacity 0.3s ease;
   }
 
-  body:has(.menu-toggle).menu-open .nav-backdrop {
+  .menu-open .site-header .nav-backdrop {
     display: block;
     opacity: 1;
     pointer-events: auto;
   }
 
-  body:has(.menu-toggle).menu-open {
+  .menu-open {
     overflow: hidden;
   }
 
-  body:has(.menu-toggle) .landing-panel {
+  .landing-panel {
     width: 100%;
-    padding-top: 4rem;
   }
 
   h1 {
