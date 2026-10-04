@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
 }
 
 :root {
@@ -23,25 +22,11 @@
   --font-display: 'Righteous', serif;
   --font-sans: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', sans-serif;
 
-  /* Layout Breakpoints (For cleaner media queries) */
-  --breakpoint-mobile: 480px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-tv: 2000px;
-
-  /* Image Styling */
   --rounded-br: 4rem;
-
-  /* Standard Spacings */
-  --spacing-1: 0.1rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
   --spacing-4: 1.5rem;
   --spacing-5: 2rem;
-  --spacing-6: 2.75rem;
-  --spacing-7: 5rem;
-  --spacing-8: 10rem;
-  --spacing-9: 15rem;
-  --spacing-10: 20rem;
 }
 
 /* Base Layout */
@@ -50,7 +35,7 @@ main {
   min-height: 100vh;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  background: var(--bg-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,18 +75,10 @@ h1 {
   text-align: center;
 }
 
-h2,
-h5,
-h7,
-h8 {
+h2 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  align-items: center;
-  justify-content: center;
   color: #4188eb;
   margin: 0.5rem 0;
-}
-
-h2 {
   font-size: 1.25rem;
   font-weight: bold;
 }
@@ -109,7 +86,7 @@ h2 {
 h3 {
   font-size: clamp(1.25rem, 3.5vw, 2rem);
   font-family: var(--font-sans);
-  color: #4188eb;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -120,31 +97,11 @@ h4 {
   color: var(--text-dark);
 }
 
-h5 {
-  font-size: 1rem;
-  line-height: 150%;
-  font-weight: bold;
-}
-
 h6 {
   font-size: 0.8rem;
   font-family: var(--font-sans);
   color: var(--text-dark);
   font-weight: 500;
-}
-
-h7 {
-  font-size: 1.75rem;
-  font-weight: bold;
-  margin: 1rem 0;
-}
-
-h8 {
-  font-size: 1.25rem;
-  font-weight: bolder;
-  margin-bottom: 0.8rem;
-  margin-left: 0.5rem;
-  padding-right: 0.8rem;
 }
 
 p {
@@ -233,30 +190,6 @@ p {
   animation: slideInFromRight 0.5s ease 0.5s forwards;
 }
 
-.navs:nth-child(7) {
-  animation: slideInFromRight 0.5s ease 0.6s forwards;
-}
-
-.navs:nth-child(8) {
-  animation: slideInFromRight 0.5s ease 0.7s forwards;
-}
-
-.navs>div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.navs.loaded>div {
-  opacity: 1;
-}
-
 .selected {
   background: rgba(255, 255, 255, 0.3);
 }
@@ -275,7 +208,7 @@ p {
 }
 
 .btn:hover {
-  background-color: #65dfc9;
+  background-color: var(--accent-color);
 }
 
 /* Images */
@@ -314,6 +247,7 @@ img {
 
 /* Flex Dashboard */
 .dashboard-info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,17 +263,8 @@ img {
   column-gap: var(--spacing-5);
 }
 
-/* Style for VSCO icon since it was deprecated in icon pack */
-
-.logos,
-.logos2 {
-  max-width: 55%;
-  justify-self: center;
-  justify-content: center;
-  border-radius: 4rem;
-}
-
 .avatar {
+  position: relative;
   width: clamp(23rem, 40vw, 30rem);
   border-radius: var(--rounded-br);
   height: auto;
@@ -348,34 +273,6 @@ img {
   border-color: white;
   top: 10rem;
   left: 5rem;
-}
-
-.logos,
-.logos2 {
-  width: 20rem;
-  height: auto;
-  border: #ffffff 1.5rem;
-}
-
-/* Tables */
-table,
-th,
-td {
-  border: 1px solid #ddd;
-  border-collapse: collapse;
-  padding: 0.5rem;
-  text-align: left;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-caption {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #4188eb;
 }
 
 /* Lists */
@@ -406,7 +303,7 @@ li a {
 }
 
 li a:hover {
-  color: #65dfc9;
+  color: var(--accent-color);
 }
 
 /* Animations */
@@ -571,18 +468,13 @@ li a:hover {
 .project-panel {
   width: 100%;
   margin: 0 auto 4rem;
-  padding: 0;
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
   gap: 1.25rem;
   align-items: center;
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .project-panel.visible {
@@ -600,23 +492,13 @@ li a:hover {
   font-size: 0.8rem;
   font-style: italic;
   color: var(--text-dark);
-  letter-spacing: normal;
-  text-transform: none;
-  font-weight: 400;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
 }
 
 .project-copy h2 {
   margin: 0.8rem 0 0.8rem;
   font-size: clamp(1.4rem, 2.2vw, 2rem);
   line-height: 1.3;
-  color: var(--primary-color);
   text-align: left;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  text-shadow: none;
 }
 
 .project-copy .project-copy-block {
@@ -682,7 +564,6 @@ li a:hover {
 .primary-btn {
   background: #4188eb;
   color: white;
-  box-shadow: none;
 }
 
 .secondary-btn {
@@ -829,7 +710,6 @@ li a:hover {
 
   .project-panel {
     margin-bottom: 1.5rem;
-    border-radius: 1.2rem;
   }
 
   .project-slideshow {
@@ -844,19 +724,9 @@ li a:hover {
     padding: 1rem;
   }
 
-  .glass-panel {
-    width: 100%;
-    min-height: calc(100vh - 2rem);
-  }
-
   .navbar {
     gap: 0.25rem;
     padding: 0.5rem;
-  }
-
-  .navs {
-    font-size: 0.85rem;
-    padding: 0.5rem 0.65rem;
   }
 
   .list-panel {
@@ -875,13 +745,11 @@ li a:hover {
   .list-card h6 {
     font-size: 1rem;
   }
-  
-  .list-card .accomplishments {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+  .logos {
+    width: 15rem;
   }
-  
+
   .list-card .logos {
     margin-right: 0;
     margin-bottom: 1rem;
@@ -970,7 +838,6 @@ li a:hover {
   }
 
   .avatar {
-    width: min(75vw, 20rem);
     top: 0;
     left: 0;
   }
@@ -990,11 +857,6 @@ li a:hover {
   .btn {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-  }
-  
-  .logos,
-  .logos2 {
-    width: 15rem;
   }
   
   .avatar {
@@ -1017,8 +879,7 @@ li a:hover {
     font-size: 1.1rem;
   }
   
-  .logos,
-  .logos2 {
+  .logos {
     width: 25rem;
   }
   
@@ -1028,10 +889,6 @@ li a:hover {
 }
 
 @media only screen and (max-width: 480px) {
-  .menu-toggle {
-    display: none;
-  }
-
   .site-header {
     height: 3rem;
   }
@@ -1089,11 +946,6 @@ li a:hover {
     display: flex;
   }
 
-  .site-header .navs.loaded {
-    opacity: 1;
-    transform: none;
-  }
-
   .site-header .nav-backdrop {
     position: fixed;
     z-index: 8;
@@ -1128,26 +980,13 @@ li a:hover {
     font-size: 2rem;
   }
 
-  .cstmBtn {
-    padding: 0.3rem;
-    padding-bottom: 1rem;
-    width: 100%;
-    height: 2.8rem;
-    
-  }
-
-  .custom-icon {
-    width: 2.15rem;
-  }
-
   .socials {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
   }
   
-  .logos,
-  .logos2 {
+  .logos {
     width: 12rem;
   }
   
@@ -1155,50 +994,12 @@ li a:hover {
     width: min(75vw, 18rem);
   }
 
-  .socials2 {
-    flex-direction: column;
-    gap: 0.2rem;
-    margin-bottom: 3rem;
-  }
-  
   h2 {
     font-size: 1rem;
-  }
-  
-  h8 {
-    font-size: 1rem;
-    margin-left: 0.3rem;
-    padding-right: 0.5rem;
   }
   
   .circle1,
   .circle2 {
     display: none;
   }
-
-  table {
-    display: block;
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: auto;
-    font-size: 0.85rem;
-  }
-  thead, tbody, tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-  }
-  th, td {
-    word-break: break-word;
-    padding: 0.3rem;
-  }
-  caption {
-    display: block;
-    width: 100vw;
-    max-width: 100vw;
-    margin-left: -4vw;
-    text-align: center;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-  }
-} 
+}
