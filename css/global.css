@@ -319,7 +319,6 @@ img {
   align-items: center;
   gap: var(--spacing-4);
   width: 100%;
-  top: 10rem;
 }
 
 /* Social Media Icons */
@@ -346,8 +345,33 @@ img {
   border-style: double;
   border-width: 0.5rem;
   border-color: white;
-  top: 10rem;
-  left: 5rem;
+}
+
+@media only screen and (min-width: 769px) {
+  body:has(.landing-panel) .glass-panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .landing-panel {
+    flex: 1;
+    width: 100%;
+    gap: var(--spacing-5);
+  }
+
+  .avatar {
+    flex: 0 1 40%;
+    width: 40%;
+    height: 60vh;
+    max-width: 30rem;
+    max-height: 60vh;
+    object-fit: cover;
+  }
+
+  .dashboard-info {
+    flex: 0 1 40%;
+    width: auto;
+  }
 }
 
 .logos,
