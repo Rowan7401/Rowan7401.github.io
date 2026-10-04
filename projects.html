@@ -215,8 +215,13 @@
 
     projectSliders.forEach((slider) => {
       const slides = Array.from(slider.querySelectorAll('.slide'));
-      const dots = Array.from(slider.parentElement.querySelectorSelectorAll('.slide-dots button'));
+      const dots = Array.from(slider.parentElement.querySelectorAll('.slide-dots button'));
       let currentSlide = 0;
+
+      const updateSliderOrientation = () => {
+        const image = slides[currentSlide].querySelector('img');
+        slider.classList.toggle('is-portrait', image.naturalHeight > image.naturalWidth);
+      };
 
       const showSlide = (index) => {
         currentSlide = (index + slides.length) % slides.length;
@@ -228,7 +233,13 @@
         dots.forEach((dot, dotIndex) => {
           dot.classList.toggle('is-active', dotIndex === currentSlide);
         });
+
+        updateSliderOrientation();
       };
+
+      slides.forEach((slide) => {
+        slide.querySelector('img').addEventListener('load', updateSliderOrientation);
+      });
 
       const prevButton = slider.querySelector('.prev');
       const nextButton = slider.querySelector('.next');
